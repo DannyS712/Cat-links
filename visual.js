@@ -106,84 +106,124 @@ function tagsmanager() {
 				)
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-multiple','id':'TH-option-checkbox-multiple'}),
-				$('<label>').attr({'for':'TH-option-multiple', 'id':'TH-option-label-multiple'}).text('Group inside {{multiple issues}}')
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-Article','id':'TH-option-checkbox-Article'}),
+				$('<label>').attr({'for':'TH-option-Article', 'id':'TH-option-label-Article'}).text('Articles')
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-advert','id':'TH-option-checkbox-advert'}),
-				$('<label>').attr({'for':'TH-option-advert', 'id':'TH-option-label-advert'}).text('{{advert}}')
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-Talk','id':'TH-option-checkbox-Talk'}),
+				$('<label>').attr({'for':'TH-option-Talk', 'id':'TH-option-label-Talk'}).text('Talk')
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-allplot','id':'TH-option-checkbox-allplot'}),
-				$('<label>').attr({'for':'TH-option-allplot', 'id':'TH-option-label-allplot'}).text('{{all plot}}')
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-User','id':'TH-option-checkbox-User'}),
+				$('<label>').attr({'for':'TH-option-User', 'id':'TH-option-label-User'}).text('User')
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-autobiography','id':'TH-option-checkbox-autobiography'}),
-				$('<label>').attr({'for':'TH-option-autobiography', 'id':'TH-option-label-autobiography'}).text('{{autobiography}}')
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-User_talk','id':'TH-option-checkbox-User_talk'}),
+				$('<label>').attr({'for':'TH-option-User_talk', 'id':'TH-option-label-User_talk'}).text('User talk')
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-BLPsources','id':'TH-option-checkbox-BLPsources'}),
-				$('<label>').attr({'for':'TH-option-BLPsources', 'id':'TH-option-label-BLPsources'}).text('{{BLP sources}}')
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-Wikipedia','id':'TH-option-checkbox-Wikipedia'}),
+				$('<label>').attr({'for':'TH-option-Wikipedia', 'id':'TH-option-label-Wikipedia'}).text('Wikipedia')
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-BLPunsourced','id':'TH-option-checkbox-BLPunsourced'}),
-				$('<label>').attr({'for':'TH-option-BLPunsourced', 'id':'TH-option-label-BLPunsourced'}).text('{{BLP unsourced}}')
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-Wikipedia_talk','id':'TH-option-checkbox-Wikipedia_talk'}),
+				$('<label>').attr({'for':'TH-option-Wikipedia_talk', 'id':'TH-option-label-Wikipedia_talk'}).text('Wikipedia talk')
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-citationstyle','id':'TH-option-checkbox-citationstyle'}),
-				$('<label>').attr({'for':'TH-option-citationstyle', 'id':'TH-option-label-citationstyle'}).text('{{citation style}}')
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-File','id':'TH-option-checkbox-File'}),
+				$('<label>').attr({'for':'TH-option-File', 'id':'TH-option-label-File'}).text('File')
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-cleanup','id':'TH-option-checkbox-cleanup'}),
-				$('<label>').attr({'for':'TH-option-cleanup', 'id':'TH-option-label-cleanup'}).text('{{cleanup}}')
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-File_talk','id':'TH-option-checkbox-File_talk'}),
+				$('<label>').attr({'for':'TH-option-File_talk', 'id':'TH-option-label-File_talk'}).text('File talk')
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-cleanup-reorganize','id':'TH-option-checkbox-cleanup-reorganize'}),
-				$('<label>').attr({'for':'TH-option-cleanup-reorganize', 'id':'TH-option-label-cleanup-reorganize'}).text('{{cleanup-reorganize}}')
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-MediaWiki','id':'TH-option-checkbox-MediaWiki'}),
+				$('<label>').attr({'for':'TH-option-MediaWiki', 'id':'TH-option-label-MediaWiki'}).text('MediaWiki')
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-closeparaphrasing','id':'TH-option-checkbox-closeparaphrasing'}),
-				$('<label>').attr({'for':'TH-option-closeparaphrasing', 'id':'TH-option-label-closeparaphrasing'}).text('{{close paraphrasing}}')
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-MediaWiki_talk','id':'TH-option-checkbox-MediaWiki_talk'}),
+				$('<label>').attr({'for':'TH-option-MediaWiki_talk', 'id':'TH-option-label-MediaWiki_talk'}).text('MediaWiki talk')
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-COI','id':'TH-option-checkbox-COI'}),
-				$('<label>').attr({'for':'TH-option-COI', 'id':'TH-option-label-COI'}).text('{{COI}}')
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-Template','id':'TH-option-checkbox-Template'}),
+				$('<label>').attr({'for':'TH-option-Template', 'id':'TH-option-label-Template'}).text('Template')
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-condense','id':'TH-option-checkbox-condense'}),
-				$('<label>').attr({'for':'TH-option-condense', 'id':'TH-option-label-condense'}).text('{{condense}}')
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-Template_talk','id':'TH-option-checkbox-Template_talk'}),
+				$('<label>').attr({'for':'TH-option-Template_talk', 'id':'TH-option-label-Template_talk'}).text('Template talk')
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-confusing','id':'TH-option-checkbox-confusing'}),
-				$('<label>').attr({'for':'TH-option-confusing', 'id':'TH-option-label-confusing'}).text('{{confusing}}')
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-Help','id':'TH-option-checkbox-Help'}),
+				$('<label>').attr({'for':'TH-option-Help', 'id':'TH-option-label-Help'}).text('Help')
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-context','id':'TH-option-checkbox-context'}),
-				$('<label>').attr({'for':'TH-option-context', 'id':'TH-option-label-context'}).text('{{context}}')
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-Help_talk','id':'TH-option-checkbox-Help_talk'}),
+				$('<label>').attr({'for':'TH-option-Help_talk', 'id':'TH-option-label-Help_talk'}).text('Help talk')
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-copyedit','id':'TH-option-checkbox-copyedit'}),
-				$('<label>').attr({'for':'TH-option-copyedit', 'id':'TH-option-label-copyedit'}).text('{{copy edit}}')
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-Category','id':'TH-option-checkbox-Category'}),
+				$('<label>').attr({'for':'TH-option-Category', 'id':'TH-option-label-Category'}).text('Category')
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-copypaste','id':'TH-option-checkbox-copypaste'}),
-				$('<label>').attr({'for':'TH-option-copypaste', 'id':'TH-option-label-copypaste'}).text('{{copypaste}}')
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-Category_talk','id':'TH-option-checkbox-Category_talk'}),
+				$('<label>').attr({'for':'TH-option-Category_talk', 'id':'TH-option-label-Category_talk'}).text('Category talk')
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-disputed','id':'TH-option-checkbox-disputed'}),
-				$('<label>').attr({'for':'TH-option-disputed', 'id':'TH-option-label-disputed'}).text('{{disputed}}')
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-Portal','id':'TH-option-checkbox-Portal'}),
+				$('<label>').attr({'for':'TH-option-Portal', 'id':'TH-option-label-Portal'}).text('Portal')
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-essay-like','id':'TH-option-checkbox-essay-like'}),
-				$('<label>').attr({'for':'TH-option-essay-like', 'id':'TH-option-label-essay-like'}).text('{{essay-like}}')
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-Portal_talk','id':'TH-option-checkbox-Portal_talk'}),
+				$('<label>').attr({'for':'TH-option-Portal_talk', 'id':'TH-option-label-Portal_talk'}).text('Portal talk')
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-expandlanguage','id':'TH-option-checkbox-expandlanguage'}),
-				$('<label>').attr({'for':'TH-option-expandlanguage', 'id':'TH-option-label-expandlanguage'}).text('{{expand language}}')
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-Book','id':'TH-option-checkbox-Book'}),
+				$('<label>').attr({'for':'TH-option-Book', 'id':'TH-option-label-Book'}).text('Book')
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-expertneeded','id':'TH-option-checkbox-expertneeded'}),
-				$('<label>').attr({'for':'TH-option-expertneeded', 'id':'TH-option-label-expertneeded'}).text('{{expert needed}}')
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-Book_talk','id':'TH-option-checkbox-Book_talk'}),
+				$('<label>').attr({'for':'TH-option-Book_talk', 'id':'TH-option-label-Book_talk'}).text('Book talk')
+			),
+			$('<div>').css('margin-bottom','0.5em').append(
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-Draft','id':'TH-option-checkbox-Draft'}),
+				$('<label>').attr({'for':'TH-option-Draft', 'id':'TH-option-label-Draft'}).text('Draft')
+			),
+			$('<div>').css('margin-bottom','0.5em').append(
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-Draft_talk','id':'TH-option-checkbox-Draft_talk'}),
+				$('<label>').attr({'for':'TH-option-Draft_talk', 'id':'TH-option-label-Draft_talk'}).text('Draft talk')
+			),
+			$('<div>').css('margin-bottom','0.5em').append(
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-TimedText','id':'TH-option-checkbox-TimedText'}),
+				$('<label>').attr({'for':'TH-option-TimedText', 'id':'TH-option-label-TimedText'}).text('TimedText')
+			),
+			$('<div>').css('margin-bottom','0.5em').append(
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-TimedText_talk','id':'TH-option-checkbox-TimedText_talk'}),
+				$('<label>').attr({'for':'TH-option-TimedText_talk', 'id':'TH-option-label-TimedText_talk'}).text('TimedText talk')
+			),
+			$('<div>').css('margin-bottom','0.5em').append(
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-Module','id':'TH-option-checkbox-Module'}),
+				$('<label>').attr({'for':'TH-option-Module', 'id':'TH-option-label-Module'}).text('Module')
+			),
+			$('<div>').css('margin-bottom','0.5em').append(
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-Module_talk','id':'TH-option-checkbox-Module_talk'}),
+				$('<label>').attr({'for':'TH-option-Module_talk', 'id':'TH-option-label-Module_talk'}).text('Module talk')
+			),
+			$('<div>').css('margin-bottom','0.5em').append(
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-Gadget','id':'TH-option-checkbox-Gadget'}),
+				$('<label>').attr({'for':'TH-option-Gadget', 'id':'TH-option-label-Gadget'}).text('Gadget')
+			),
+			$('<div>').css('margin-bottom','0.5em').append(
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-Gadget_talk','id':'TH-option-checkbox-Gadget_talk'}),
+				$('<label>').attr({'for':'TH-option-Gadget_talk', 'id':'TH-option-label-Gadget_talk'}).text('Gadget talk')
+			),
+			$('<div>').css('margin-bottom','0.5em').append(
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-Gadget_Definition','id':'TH-option-checkbox-Gadget_Definition'}),
+				$('<label>').attr({'for':'TH-option-Gadget_Definition', 'id':'TH-option-label-Gadget_Definition'}).text('Gadget Definition')
+			),
+			$('<div>').css('margin-bottom','0.5em').append(
+				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-Gadget_Definition_talk','id':'TH-option-checkbox-Gadget_Definition_talk'}),
+				$('<label>').attr({'for':'TH-option-Gadget_Definition_talk', 'id':'TH-option-label-Gadget_Definition_talk'}).text('Gadget Definition talk')
 			)
 		);
 		$("#TH-interface-footer").append(
@@ -200,25 +240,35 @@ function tagsmanager() {
 		$("#TH-next").click(function(){
 			var editsummary = $('#TH-editsummary').val();
 			var wikitext = "";
-			if ($("#TH-option-checkbox-advert").prop("checked")) console.log("{{advert}}\n");
-			if ($("#TH-option-checkbox-allplot").prop("checked")) console.log("{{all plot}}\n");
-			if ($("#TH-option-checkbox-autobiography").prop("checked")) console.log("{{autobiography}}\n");
-			if ($("#TH-option-checkbox-BLPsources").prop("checked")) console.log("{{BLP sources}}\n");
-			if ($("#TH-option-checkbox-BLPunsourced").prop("checked")) console.log("{{BLP unsourced}}\n");
-			if ($("#TH-option-checkbox-citationstyle").prop("checked")) console.log("{{citation style}}\n");
-			if ($("#TH-option-checkbox-cleanup").prop("checked")) console.log("{{cleanup}}\n");
-			if ($("#TH-option-checkbox-cleanup-reorganize").prop("checked")) console.log("{{cleanup-reorganize}}\n");
-			if ($("#TH-option-checkbox-closeparaphrasing").prop("checked")) console.log("{{close paraphrasing}}\n");
-			if ($("#TH-option-checkbox-COI").prop("checked")) console.log("{{COI}}\n");
-			if ($("#TH-option-checkbox-condense").prop("checked")) console.log("{{condense}}\n");
-			if ($("#TH-option-checkbox-confusing").prop("checked")) console.log("{{confusing}}\n");
-			if ($("#TH-option-checkbox-context").prop("checked")) console.log("{{context}}\n");
-			if ($("#TH-option-checkbox-copyedit").prop("checked")) console.log("{{copy edit}}\n");
-			if ($("#TH-option-checkbox-copypaste").prop("checked")) console.log("{{copypaste}}\n");
-			if ($("#TH-option-checkbox-disputed").prop("checked")) console.log("{{disputed}}\n");
-			if ($("#TH-option-checkbox-essay-like").prop("checked")) console.log("{{essay-like}}\n");
-			if ($("#TH-option-checkbox-expandlanguage").prop("checked")) console.log("{{expand language}}\n");
-			if ($("#TH-option-checkbox-expertneeded").prop("checked")) console.log("{{expert needed}}\n");
+			if ($("#TH-option-checkbox-Talk").prop("checked")) console.log("{{Talk}}\n");
+			if ($("#TH-option-checkbox-User").prop("checked")) console.log("{{all plot}}\n");
+			if ($("#TH-option-checkbox-User_talk").prop("checked")) console.log("{{User_talk}}\n");
+			if ($("#TH-option-checkbox-Wikipedia").prop("checked")) console.log("{{BLP sources}}\n");
+			if ($("#TH-option-checkbox-Wikipedia_talk").prop("checked")) console.log("{{BLP unsourced}}\n");
+			if ($("#TH-option-checkbox-File").prop("checked")) console.log("{{citation style}}\n");
+			if ($("#TH-option-checkbox-File_talk").prop("checked")) console.log("{{File_talk}}\n");
+			if ($("#TH-option-checkbox-MediaWiki").prop("checked")) console.log("{{MediaWiki}}\n");
+			if ($("#TH-option-checkbox-MediaWiki_talk").prop("checked")) console.log("{{close paraphrasing}}\n");
+			if ($("#TH-option-checkbox-Template").prop("checked")) console.log("{{Template}}\n");
+			if ($("#TH-option-checkbox-Template_talk").prop("checked")) console.log("{{Template_talk}}\n");
+			if ($("#TH-option-checkbox-Help").prop("checked")) console.log("{{Help}}\n");
+			if ($("#TH-option-checkbox-Help_talk").prop("checked")) console.log("{{Help_talk}}\n");
+			if ($("#TH-option-checkbox-Category").prop("checked")) console.log("{{copy edit}}\n");
+			if ($("#TH-option-checkbox-Category_talk").prop("checked")) console.log("{{Category_talk}}\n");
+			if ($("#TH-option-checkbox-Portal").prop("checked")) console.log("{{Portal}}\n");
+			if ($("#TH-option-checkbox-Portal_talk").prop("checked")) console.log("{{Portal_talk}}\n");
+			if ($("#TH-option-checkbox-Book").prop("checked")) console.log("{{expand language}}\n");
+			if ($("#TH-option-checkbox-Book_talk").prop("checked")) console.log("{{expert needed}}\n");
+			if ($("#TH-option-checkbox-Draft").prop("checked")) console.log("{{Template}}\n");
+			if ($("#TH-option-checkbox-Draft_talk").prop("checked")) console.log("{{Template_talk}}\n");
+			if ($("#TH-option-checkbox-TimedText").prop("checked")) console.log("{{Help}}\n");
+			if ($("#TH-option-checkbox-TimedText_talk").prop("checked")) console.log("{{Help_talk}}\n");
+			if ($("#TH-option-checkbox-Module").prop("checked")) console.log("{{copy edit}}\n");
+			if ($("#TH-option-checkbox-Module_talk").prop("checked")) console.log("{{Category_talk}}\n");
+			if ($("#TH-option-checkbox-Gadget").prop("checked")) console.log("{{Portal}}\n");
+			if ($("#TH-option-checkbox-Gadget_talk").prop("checked")) console.log("{{Portal_talk}}\n");
+			if ($("#TH-option-checkbox-Gadget_Definition").prop("checked")) console.log("{{expand language}}\n");
+			if ($("#TH-option-checkbox-Gadget_Definition_talk").prop("checked")) console.log("{{expert needed}}\n");
 			wikitext += content;
 			screen2(wikitext, editsummary);
 		});
@@ -262,7 +312,7 @@ function tagsmanager() {
 			action: 'edit',
 			title: config.mw.wgPageName,
 			text: wikitext,
-			summary: editsummary + config.script.advert
+			summary: editsummary + config.script.Talk
 		})
 		.done( function() {
 		$("#TH-task0").css({"color":"#000", "font-weight":""});
