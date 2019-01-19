@@ -2,7 +2,7 @@ var accepted_ns = [];
 
 var cl_config = {
 	debug: true,
-}
+};
 
 mw.loader.using( 'mediawiki.util', function () {
     importScript('User:DannyS712 test/append.js');
@@ -62,7 +62,7 @@ function make_link( page_element ){
 	return this_link;
 }
 function parse_requested_ns ( requested_ns ){
-	if (cl_config.debug) onsole.log( requested_ns );
+	if (cl_config.debug) console.log( requested_ns );
 	var ns_string_array = requested_ns.toString().split(", ");
 	for (index = 0; index < ns_string_array.length; ++index) {
     	var this_ns = parseInt( ns_string_array[index] );
