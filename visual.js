@@ -205,87 +205,87 @@ function tagsmanager() {
 			var wikitext = "";
 			var pos1, pos2, remove;
 			var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], d = new Date();
-			if ($("#TH-option-checkbox-multiple").prop("checked") && multipleissues === 0) {
+			if ($("#TH-option-checkbox-multiple").prop("checked")) {
 				wikitext += "{{multiple issues|\n";
 			}
 			/******************************/
-			if ($("#TH-option-checkbox-advert").prop("checked") && adv === 0) {
+			if ($("#TH-option-checkbox-advert").prop("checked")) {
 				wikitext += "{{advert|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
 			/******************************/
-			if ($("#TH-option-checkbox-allplot").prop("checked") && allplot === 0) {
+			if ($("#TH-option-checkbox-allplot").prop("checked")) {
 				wikitext += "{{all plot|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
 			/******************************/
-			if ($("#TH-option-checkbox-autobiography").prop("checked") && autobiography === 0) {
+			if ($("#TH-option-checkbox-autobiography").prop("checked")) {
 				wikitext += "{{autobiography|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
 			/******************************/
-			if ($("#TH-option-checkbox-BLPsources").prop("checked") && BLPsources === 0) {
+			if ($("#TH-option-checkbox-BLPsources").prop("checked")) {
 				wikitext += "{{BLP sources|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
 			/******************************/
-			if ($("#TH-option-checkbox-BLPunsourced").prop("checked") && BLPunsourced === 0) {
+			if ($("#TH-option-checkbox-BLPunsourced").prop("checked")) {
 				wikitext += "{{BLP unsourced|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
 			/******************************/
-			if ($("#TH-option-checkbox-citationstyle").prop("checked") && citationstyle === 0) {
+			if ($("#TH-option-checkbox-citationstyle").prop("checked")) {
 				wikitext += "{{citation style|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
 			/******************************/
-			if ($("#TH-option-checkbox-cleanup").prop("checked") && cleanup === 0) {
+			if ($("#TH-option-checkbox-cleanup").prop("checked")) {
 				wikitext += "{{cleanup|reason="+$('#TH-option-cleanup').val().trim()+"|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
 			/******************************/
-			if ($("#TH-option-checkbox-cleanup-reorganize").prop("checked") && cleanup_reorganize === 0) {
+			if ($("#TH-option-checkbox-cleanup-reorganize").prop("checked")) {
 				wikitext += "{{cleanup-reorganize|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
 			/******************************/
-			if ($("#TH-option-checkbox-closeparaphrasing").prop("checked") && closeparaphrasing === 0) {
+			if ($("#TH-option-checkbox-closeparaphrasing").prop("checked")) {
 				wikitext += "{{close paraphrasing|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
 			/******************************/
-			if ($("#TH-option-checkbox-COI").prop("checked") && COI === 0) {
+			if ($("#TH-option-checkbox-COI").prop("checked")) {
 				wikitext += "{{COI|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
 			/******************************/
-			if ($("#TH-option-checkbox-condense").prop("checked") && condense === 0) {
+			if ($("#TH-option-checkbox-condense").prop("checked")) {
 				wikitext += "{{condense|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
 			/******************************/
-			if ($("#TH-option-checkbox-confusing").prop("checked") && confusing === 0) {
+			if ($("#TH-option-checkbox-confusing").prop("checked")) {
 				wikitext += "{{confusing|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
 			/******************************/
-			if ($("#TH-option-checkbox-context").prop("checked") && context === 0) {
+			if ($("#TH-option-checkbox-context").prop("checked")) {
 				wikitext += "{{context|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
 			/******************************/
-			if ($("#TH-option-checkbox-copyedit").prop("checked") && copyedit === 0) {
+			if ($("#TH-option-checkbox-copyedit").prop("checked")) {
 				wikitext += "{{copy edit|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
 			/******************************/
-			if ($("#TH-option-checkbox-copypaste").prop("checked") && copypaste === 0) {
+			if ($("#TH-option-checkbox-copypaste").prop("checked")) {
 				wikitext += "{{copypaste|url="+$('#TH-option-copypaste').val().trim()+"|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
 			/******************************/
-			if ($("#TH-option-checkbox-disputed").prop("checked") && disputed === 0) {
+			if ($("#TH-option-checkbox-disputed").prop("checked")) {
 				wikitext += "{{disputed|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
 			/******************************/
-			if ($("#TH-option-checkbox-essay-like").prop("checked") && essay_like === 0) {
+			if ($("#TH-option-checkbox-essay-like").prop("checked")) {
 				wikitext += "{{essay-like|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
 			/******************************/
-			if ($("#TH-option-checkbox-expandlanguage").prop("checked") && expandlanguage === 0) {
+			if ($("#TH-option-checkbox-expandlanguage").prop("checked")) {
 				wikitext += "{{expand language|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
 			/******************************/
-			if ($("#TH-option-checkbox-expertneeded").prop("checked") && expertneeded === 0) {
+			if ($("#TH-option-checkbox-expertneeded").prop("checked")) {
 				wikitext += "{{expert needed|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
 			/******************************/			
-			if ($("#TH-option-checkbox-multiple").prop("checked") && multipleissues === 0) {
+			if ($("#TH-option-checkbox-multiple").prop("checked")) {
 				wikitext += "}}\n";
 			}
 			wikitext += content;
