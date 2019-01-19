@@ -51,11 +51,15 @@ function tagsmanager() {
 	};
 	var screen1 = function() {
 		$("#CL-interface-header, #CL-interface-content, #CL-interface-footer").empty();
-		$("#CL-interface-header").text("Tags Manager: options");
+		$("#CL-interface-header").text("Category links: Namespaces");
+		$("#CL-interface-header").append(
+			$('<label>').text('Edit summary: '),
+			$('<input>').attr({'type':'text','id':'CL-cat-name','name':'CL-cat-name'}),
+		);
 		$("#CL-interface-content").append(
 			$('<div>').css('margin-bottom','0.5em').append(
 				$('<label>').attr('for','CL-option-newtitle').append(
-					'Tags available:'
+					'Namespaces available:'
 				)
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
@@ -180,17 +184,14 @@ function tagsmanager() {
 			)
 		);
 		$("#CL-interface-footer").append(
-			$('<label>').text('Edit summary: '),
-			$('<input>').attr({'type':'text','id':'CL-editsummary','name':'CL-editsummary'}),
-			$('<br />'),
-			$('<button>').attr('id', 'CL-next').text('Tag!'),
+			$('<button>').attr('id', 'CL-next').text('Add links!'),
 			$('<button>').attr('id', 'CL-cancel').css('margin-left','3em').text('Cancel')
 		);
 		$("#CL-cancel").click(function(){
 			$("#CL-modal").remove();
 		});
 		$("#CL-next").click(function(){
-			var editsummary = $('#CL-editsummary').val();
+			var chosen_category = $('#CL-cat-name').val();
 			if ($("#CL-option-checkbox-Article").prop("checked")) console.log("Articles");
 			if ($("#CL-option-checkbox-Talk").prop("checked")) console.log("Talk");
 			if ($("#CL-option-checkbox-User").prop("checked")) console.log("User");
@@ -221,25 +222,7 @@ function tagsmanager() {
 			if ($("#CL-option-checkbox-Gadget_talk").prop("checked")) console.log("Gadget talk");
 			if ($("#CL-option-checkbox-Gadget_Definition").prop("checked")) console.log("Gadget Definition");
 			if ($("#CL-option-checkbox-Gadget_Definition_talk").prop("checked")) console.log("Gadget Definition talk");
+			$("#CL-modal").remove();
 		});
-	};
-	var screen2 = function() {
-		$("#CL-interface-header, #CL-interface-content, #CL-interface-footer").empty();
-		$("#CL-interface-header").text("Tags Manager: In progress...");
-		$("#CL-interface-content").append(
-			$('<ul>').attr('id', 'CL-tasks').css("color", "#888").append(
-				$('<li>').attr('id', 'CL-task0').append(
-					'Editing page ',
-					$('<span>').attr('id','CL-status0').text('waiting')
-				)
-			)
-		);
-		$("#CL-interface-footer").append(
-			$('<button>').attr('id', 'CL-abort').text('Abort'),
-			$('<span>').attr('id', 'CL-finished').hide().append(
-				'Finished!<br />',
-				$('<button>').attr('id', 'CL-close').text('Close')
-			)
-		);
 	};
 }
