@@ -1,4 +1,4 @@
-var accepted_ns = int[];
+var accepted_ns = [];
 
 mw.loader.using( 'mediawiki.util', function () {
     importScript('User:DannyS712 test/append.js');
