@@ -52,7 +52,7 @@ function make_link( page_element ){
 	var page_name = page_element.title;
 	var this_link = "";
 	if ( page_ns === accepted_ns ) {
-		this_link = '* [[' + pages[i].title + ']]\n';
+		this_link = '* [[' + page_name + ']]\n';
 	}
 	return this_link;
 }
