@@ -60,7 +60,7 @@ function make_link( page_element ){
 	return this_link;
 }
 function parse_requested_ns ( requested_ns ){
-	var ns_string_array = requested_ns.split(", ");
+	var ns_string_array = requested_ns.toString().split(", ");
 	for (index = 0; index < ns_string_array.length; ++index) {
     	var this_ns = parseInt( ns_string_array[index] );
     	accepted_ns.push( this_ns );
