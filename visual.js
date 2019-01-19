@@ -14,7 +14,6 @@ function tagsmanager() {
 		'wgPageName',
 		'wgUserGroups',
 		'wgUserName',
-		'wgMonthNames'
 	]);
 	config.pagedata = {};
 	var API = new mw.Api( {
@@ -201,27 +200,25 @@ function tagsmanager() {
 		$("#TH-next").click(function(){
 			var editsummary = $('#TH-editsummary').val();
 			var wikitext = "";
-			var pos1, pos2, remove;
-			var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], d = new Date();
-			if ($("#TH-option-checkbox-advert").prop("checked")) wikitext += "{{advert}}\n";
-			if ($("#TH-option-checkbox-allplot").prop("checked")) wikitext += "{{all plot}}\n";
-			if ($("#TH-option-checkbox-autobiography").prop("checked")) wikitext += "{{autobiography}}\n";
-			if ($("#TH-option-checkbox-BLPsources").prop("checked")) wikitext += "{{BLP sources}}\n";
-			if ($("#TH-option-checkbox-BLPunsourced").prop("checked")) wikitext += "{{BLP unsourced}}\n";
-			if ($("#TH-option-checkbox-citationstyle").prop("checked")) wikitext += "{{citation style}}\n";
-			if ($("#TH-option-checkbox-cleanup").prop("checked")) wikitext += "{{cleanup}}\n";
-			if ($("#TH-option-checkbox-cleanup-reorganize").prop("checked")) wikitext += "{{cleanup-reorganize}}\n";
-			if ($("#TH-option-checkbox-closeparaphrasing").prop("checked")) wikitext += "{{close paraphrasing}}\n";
-			if ($("#TH-option-checkbox-COI").prop("checked")) wikitext += "{{COI}}\n";
-			if ($("#TH-option-checkbox-condense").prop("checked")) wikitext += "{{condense}}\n";
-			if ($("#TH-option-checkbox-confusing").prop("checked")) wikitext += "{{confusing}}\n";
-			if ($("#TH-option-checkbox-context").prop("checked")) wikitext += "{{context}}\n";
-			if ($("#TH-option-checkbox-copyedit").prop("checked")) wikitext += "{{copy edit}}\n";
-			if ($("#TH-option-checkbox-copypaste").prop("checked")) wikitext += "{{copypaste}}\n";
-			if ($("#TH-option-checkbox-disputed").prop("checked")) wikitext += "{{disputed}}\n";
-			if ($("#TH-option-checkbox-essay-like").prop("checked")) wikitext += "{{essay-like}}\n";
-			if ($("#TH-option-checkbox-expandlanguage").prop("checked")) wikitext += "{{expand language}}\n";
-			if ($("#TH-option-checkbox-expertneeded").prop("checked")) wikitext += "{{expert needed}}\n";
+			if ($("#TH-option-checkbox-advert").prop("checked")) console.log("{{advert}}\n");
+			if ($("#TH-option-checkbox-allplot").prop("checked")) console.log("{{all plot}}\n");
+			if ($("#TH-option-checkbox-autobiography").prop("checked")) console.log("{{autobiography}}\n");
+			if ($("#TH-option-checkbox-BLPsources").prop("checked")) console.log("{{BLP sources}}\n");
+			if ($("#TH-option-checkbox-BLPunsourced").prop("checked")) console.log("{{BLP unsourced}}\n");
+			if ($("#TH-option-checkbox-citationstyle").prop("checked")) console.log("{{citation style}}\n");
+			if ($("#TH-option-checkbox-cleanup").prop("checked")) console.log("{{cleanup}}\n");
+			if ($("#TH-option-checkbox-cleanup-reorganize").prop("checked")) console.log("{{cleanup-reorganize}}\n");
+			if ($("#TH-option-checkbox-closeparaphrasing").prop("checked")) console.log("{{close paraphrasing}}\n");
+			if ($("#TH-option-checkbox-COI").prop("checked")) console.log("{{COI}}\n");
+			if ($("#TH-option-checkbox-condense").prop("checked")) console.log("{{condense}}\n");
+			if ($("#TH-option-checkbox-confusing").prop("checked")) console.log("{{confusing}}\n");
+			if ($("#TH-option-checkbox-context").prop("checked")) console.log("{{context}}\n");
+			if ($("#TH-option-checkbox-copyedit").prop("checked")) console.log("{{copy edit}}\n");
+			if ($("#TH-option-checkbox-copypaste").prop("checked")) console.log("{{copypaste}}\n");
+			if ($("#TH-option-checkbox-disputed").prop("checked")) console.log("{{disputed}}\n");
+			if ($("#TH-option-checkbox-essay-like").prop("checked")) console.log("{{essay-like}}\n");
+			if ($("#TH-option-checkbox-expandlanguage").prop("checked")) console.log("{{expand language}}\n");
+			if ($("#TH-option-checkbox-expertneeded").prop("checked")) console.log("{{expert needed}}\n");
 			wikitext += content;
 			screen2(wikitext, editsummary);
 		});
