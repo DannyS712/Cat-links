@@ -1,5 +1,4 @@
 $(function (){
-	if(mw.config.get('wgNamespaceNumber') !== 0 ) return;
 	if (mw.config.get('wgCurRevisionId') === 0 ) return;
 	mw.loader.using(['mediawiki.util', 'mediawiki.api', 'mediawiki.Title', 'mediawiki.RegExp'], tagsmanager());
 });
