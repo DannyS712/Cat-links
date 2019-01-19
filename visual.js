@@ -52,14 +52,14 @@ function tagsmanager() {
 	var screen1 = function() {
 		$("#CL-interface-header, #CL-interface-content, #CL-interface-footer").empty();
 		$("#CL-interface-header").text("Category links: Namespaces");
-		$("#CL-interface-header").append(
-			$('<label>').text('Edit summary: '),
+		$("#CL-interface-content").append(
+			$('<label>').text('What category would you like add add from?: '),
 			$('<input>').attr({'type':'text','id':'CL-cat-name','name':'CL-cat-name'})
 		);
 		$("#CL-interface-content").append(
 			$('<div>').css('margin-bottom','0.5em').append(
 				$('<label>').attr('for','CL-option-newtitle').append(
-					'Namespaces available:'
+					'Namespaces to add from:'
 				)
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
@@ -192,6 +192,7 @@ function tagsmanager() {
 		});
 		$("#CL-next").click(function(){
 			var chosen_category = $('#CL-cat-name').val();
+			console.log( chosen_category );
 			if ($("#CL-option-checkbox-Article").prop("checked")) console.log("Articles");
 			if ($("#CL-option-checkbox-Talk").prop("checked")) console.log("Talk");
 			if ($("#CL-option-checkbox-User").prop("checked")) console.log("User");
