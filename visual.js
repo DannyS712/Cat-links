@@ -348,191 +348,77 @@ function tagsmanager() {
 			if ($("#TH-option-checkbox-advert").prop("checked") && adv === 0) {
 				wikitext += "{{advert|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
-			else if (!$("#TH-option-checkbox-advert").prop("checked") && adv == 1) {
-				pos1 = content.indexOf('{{advert');
-				pos2 = content.indexOf('}}', pos1);
-				remove = content.substring(pos1,pos2+3);
-				content = content.replace(remove,'');
-			}
 			/******************************/
 			if ($("#TH-option-checkbox-allplot").prop("checked") && allplot === 0) {
 				wikitext += "{{all plot|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			else if (!$("#TH-option-checkbox-allplot").prop("checked") && allplot == 1) {
-				pos1 = content.indexOf('{{all plot');
-				pos2 = content.indexOf('}}', pos1);
-				remove = content.substring(pos1,pos2+3);
-				content = content.replace(remove,'');
 			}
 			/******************************/
 			if ($("#TH-option-checkbox-autobiography").prop("checked") && autobiography === 0) {
 				wikitext += "{{autobiography|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
-			else if (!$("#TH-option-checkbox-autobiography").prop("checked") && autobiography == 1) {
-				pos1 = content.indexOf('{{autobiography');
-				pos2 = content.indexOf('}}', pos1);
-				remove = content.substring(pos1,pos2+3);
-				content = content.replace(remove,'');
-			}
 			/******************************/
 			if ($("#TH-option-checkbox-BLPsources").prop("checked") && BLPsources === 0) {
 				wikitext += "{{BLP sources|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			else if (!$("#TH-option-checkbox-BLPsources").prop("checked") && BLPsources == 1) {
-				pos1 = content.indexOf('{{BLP sources');
-				pos2 = content.indexOf('}}', pos1);
-				remove = content.substring(pos1,pos2+3);
-				content = content.replace(remove,'');
 			}
 			/******************************/
 			if ($("#TH-option-checkbox-BLPunsourced").prop("checked") && BLPunsourced === 0) {
 				wikitext += "{{BLP unsourced|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
-			else if (!$("#TH-option-checkbox-BLPunsourced").prop("checked") && BLPunsourced == 1) {
-				pos1 = content.indexOf('{{BLP unsourced');
-				pos2 = content.indexOf('}}', pos1);
-				remove = content.substring(pos1,pos2+3);
-				content = content.replace(remove,'');
-			}
 			/******************************/
 			if ($("#TH-option-checkbox-citationstyle").prop("checked") && citationstyle === 0) {
 				wikitext += "{{citation style|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			else if (!$("#TH-option-checkbox-citationstyle").prop("checked") && citationstyle == 1) {
-				pos1 = content.indexOf('{{citation style');
-				pos2 = content.indexOf('}}', pos1);
-				remove = content.substring(pos1,pos2+3);
-				content = content.replace(remove,'');
 			}
 			/******************************/
 			if ($("#TH-option-checkbox-cleanup").prop("checked") && cleanup === 0) {
 				wikitext += "{{cleanup|reason="+$('#TH-option-cleanup').val().trim()+"|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
-			else if (!$("#TH-option-checkbox-cleanup").prop("checked") && cleanup == 1) {
-				pos1 = content.indexOf('{{cleanup');
-				pos2 = content.indexOf('}}', pos1);
-				remove = content.substring(pos1,pos2+3);
-				content = content.replace(remove,'');
-			}
 			/******************************/
 			if ($("#TH-option-checkbox-cleanup-reorganize").prop("checked") && cleanup_reorganize === 0) {
 				wikitext += "{{cleanup-reorganize|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			else if (!$("#TH-option-checkbox-cleanup-reorganize").prop("checked") && cleanup_reorganize == 1) {
-				pos1 = content.indexOf('{{cleanup-reorganize');
-				pos2 = content.indexOf('}}', pos1);
-				remove = content.substring(pos1,pos2+3);
-				content = content.replace(remove,'');
 			}
 			/******************************/
 			if ($("#TH-option-checkbox-closeparaphrasing").prop("checked") && closeparaphrasing === 0) {
 				wikitext += "{{close paraphrasing|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
-			else if (!$("#TH-option-checkbox-closeparaphrasing").prop("checked") && closeparaphrasing == 1) {
-				pos1 = content.indexOf('{{close paraphrasing');
-				pos2 = content.indexOf('}}', pos1);
-				remove = content.substring(pos1,pos2+3);
-				content = content.replace(remove,'');
-			}
 			/******************************/
 			if ($("#TH-option-checkbox-COI").prop("checked") && COI === 0) {
 				wikitext += "{{COI|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			else if (!$("#TH-option-checkbox-COI").prop("checked") && COI == 1) {
-				pos1 = content.indexOf('{{COI');
-				pos2 = content.indexOf('}}', pos1);
-				remove = content.substring(pos1,pos2+3);
-				content = content.replace(remove,'');
 			}
 			/******************************/
 			if ($("#TH-option-checkbox-condense").prop("checked") && condense === 0) {
 				wikitext += "{{condense|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
-			else if (!$("#TH-option-checkbox-condense").prop("checked") && condense == 1) {
-				pos1 = content.indexOf('{{condense');
-				pos2 = content.indexOf('}}', pos1);
-				remove = content.substring(pos1,pos2+3);
-				content = content.replace(remove,'');
-			}
 			/******************************/
 			if ($("#TH-option-checkbox-confusing").prop("checked") && confusing === 0) {
 				wikitext += "{{confusing|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			else if (!$("#TH-option-checkbox-confusing").prop("checked") && confusing == 1) {
-				pos1 = content.indexOf('{{confusing');
-				pos2 = content.indexOf('}}', pos1);
-				remove = content.substring(pos1,pos2+3);
-				content = content.replace(remove,'');
 			}
 			/******************************/
 			if ($("#TH-option-checkbox-context").prop("checked") && context === 0) {
 				wikitext += "{{context|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
-			else if (!$("#TH-option-checkbox-context").prop("checked") && context == 1) {
-				pos1 = content.indexOf('{{context');
-				pos2 = content.indexOf('}}', pos1);
-				remove = content.substring(pos1,pos2+3);
-				content = content.replace(remove,'');
-			}
 			/******************************/
 			if ($("#TH-option-checkbox-copyedit").prop("checked") && copyedit === 0) {
 				wikitext += "{{copy edit|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			else if (!$("#TH-option-checkbox-copyedit").prop("checked") && copyedit == 1) {
-				pos1 = content.indexOf('{{copy edit');
-				pos2 = content.indexOf('}}', pos1);
-				remove = content.substring(pos1,pos2+3);
-				content = content.replace(remove,'');
 			}
 			/******************************/
 			if ($("#TH-option-checkbox-copypaste").prop("checked") && copypaste === 0) {
 				wikitext += "{{copypaste|url="+$('#TH-option-copypaste').val().trim()+"|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
-			else if (!$("#TH-option-checkbox-copypaste").prop("checked") && copypaste == 1) {
-				pos1 = content.indexOf('{{copypaste');
-				pos2 = content.indexOf('}}', pos1);
-				remove = content.substring(pos1,pos2+3);
-				content = content.replace(remove,'');
-			}
 			/******************************/
 			if ($("#TH-option-checkbox-disputed").prop("checked") && disputed === 0) {
 				wikitext += "{{disputed|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			else if (!$("#TH-option-checkbox-disputed").prop("checked") && disputed == 1) {
-				pos1 = content.indexOf('{{disputed');
-				pos2 = content.indexOf('}}', pos1);
-				remove = content.substring(pos1,pos2+3);
-				content = content.replace(remove,'');
 			}
 			/******************************/
 			if ($("#TH-option-checkbox-essay-like").prop("checked") && essay_like === 0) {
 				wikitext += "{{essay-like|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
-			else if (!$("#TH-option-checkbox-essay-like").prop("checked") && essay_like == 1) {
-				pos1 = content.indexOf('{{essay-like');
-				pos2 = content.indexOf('}}', pos1);
-				remove = content.substring(pos1,pos2+3);
-				content = content.replace(remove,'');
-			}
 			/******************************/
 			if ($("#TH-option-checkbox-expandlanguage").prop("checked") && expandlanguage === 0) {
 				wikitext += "{{expand language|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
 			}
-			else if (!$("#TH-option-checkbox-expandlanguage").prop("checked") && expandlanguage == 1) {
-				pos1 = content.indexOf('{{expand language');
-				pos2 = content.indexOf('}}', pos1);
-				remove = content.substring(pos1,pos2+3);
-				content = content.replace(remove,'');
-			}
 			/******************************/
 			if ($("#TH-option-checkbox-expertneeded").prop("checked") && expertneeded === 0) {
 				wikitext += "{{expert needed|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			else if (!$("#TH-option-checkbox-expertneeded").prop("checked") && expertneeded == 1) {
-				pos1 = content.indexOf('{{expert needed');
-				pos2 = content.indexOf('}}', pos1);
-				remove = content.substring(pos1,pos2+3);
-				content = content.replace(remove,'');
 			}
 			/******************************/			
 			if ($("#TH-option-checkbox-multiple").prop("checked") && multipleissues === 0) {
