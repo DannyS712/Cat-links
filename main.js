@@ -19,7 +19,7 @@ function cats () {
 	var number = parseInt(prompt("How many links would you like added", "10"), 10);
 
 	if (number == -1){
-		requested_ns = (prompt("What namespace would you like to be included? (Use the namespace number) (If you would like to use mulitple namespaces, seperate each with \', \')", "0"), 0);
+		requested_ns = prompt("What namespace would you like to be included? (Use the namespace number) (If you would like to use mulitple namespaces, seperate each with \', \')", "0");
 		parse_requested_ns( requested_ns );
 		number = parseInt(prompt("How many links would you like added", "10"), 10);
 	}
