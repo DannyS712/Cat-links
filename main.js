@@ -19,7 +19,7 @@ function cats () {
 	var number = parseInt(prompt("How many links would you like added", "10"), 10);
 
 	if (number == -1){
-		requested_ns = prompt("What namespace would you like to be included? (Use the namespace number) (If you would like to use mulitple namespaces, seperate each with \', \')", "0");
+		requested_ns = prompt("What namespace would you like to be included? (Use the namespace number) (If you would like to use mulitple namespaces, seperate each with \', \', or use \'all\' to allow all namespaces)", "0");
 		parse_requested_ns( requested_ns );
 		number = parseInt(prompt("How many links would you like added", "10"), 10);
 	}
@@ -38,11 +38,9 @@ function cats () {
 		};
 		$.get( mw.config.get( 'wgScriptPath' ) + '/api.php', catRequest, function( catResponse ) {
 			var pages = catResponse.query.categorymembers;
-			//var listed = [];
 			var links = "";
 			for (var i = 0; i < pages.length; i++) {
 				var this_link = make_link( pages[i] );
-				//listed.push(this_link);
 				links = links + this_link;
 			}
 			if ( links === "" ) alert( "There are no pages in the specified namespace in that category." );
@@ -54,8 +52,7 @@ function make_link( page_element ){
 	var page_ns = page_element.ns;
 	var page_name = page_element.title;
 	var this_link = "";
-//	if ( page_ns === accepted_ns ) {
-	if ( accepted_ns.includes ( page_ns ) ) {
+	if ( accepted_ns.includes ( page_ns ) || accepted_ns.includes ( -3 )  {
 		if ( page_ns === 6 || page_ns === 14 ) page_name = ':' + page_name;
 		this_link = '* [[' + page_name + ']]\n';
 	}
@@ -63,6 +60,11 @@ function make_link( page_element ){
 }
 function parse_requested_ns ( requested_ns ){
 	if (cl_config.debug) console.log( requested_ns );
+	if ( requested_ns === "all" ) {
+		accepted_ns.push( -3 );
+		return;
+	}
+
 	var ns_string_array = requested_ns.toString().split(", ");
 	for (index = 0; index < ns_string_array.length; ++index) {
     	var this_ns = parseInt( ns_string_array[index] );
