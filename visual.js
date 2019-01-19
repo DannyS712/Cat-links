@@ -187,7 +187,7 @@ function tagsmanager() {
 			$('<div>').css('margin-bottom','0.5em').append(
 				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-expertneeded','id':'TH-option-checkbox-expertneeded'}),
 				$('<label>').attr({'for':'TH-option-expertneeded', 'id':'TH-option-label-expertneeded'}).text('{{expert needed}}')
-			),
+			)
 		);
 		$("#TH-interface-footer").append(
 			$('<label>').text('Edit summary: '),
