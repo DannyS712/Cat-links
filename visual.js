@@ -221,10 +221,9 @@ function tagsmanager() {
 			if ($("#CL-option-checkbox-Gadget_talk").prop("checked")) console.log("Gadget talk");
 			if ($("#CL-option-checkbox-Gadget_Definition").prop("checked")) console.log("Gadget Definition");
 			if ($("#CL-option-checkbox-Gadget_Definition_talk").prop("checked")) console.log("Gadget Definition talk");
-			screen2(wikitext, editsummary);
 		});
 	};
-	var screen2 = function(wikitext, editsummary) {
+	var screen2 = function() {
 		$("#CL-interface-header, #CL-interface-content, #CL-interface-footer").empty();
 		$("#CL-interface-header").text("Tags Manager: In progress...");
 		$("#CL-interface-content").append(
@@ -243,4 +242,4 @@ function tagsmanager() {
 			)
 		);
 	};
-};
+}
