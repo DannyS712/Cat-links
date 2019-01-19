@@ -1,4 +1,4 @@
-var accepted_ns = 0;
+var accepted_ns = int[];
 
 mw.loader.using( 'mediawiki.util', function () {
     importScript('User:DannyS712 test/append.js');
@@ -15,7 +15,8 @@ function cats () {
 	var number = parseInt(prompt("How many links would you like added", "10"), 10);
 
 	if (number == -1){
-		accepted_ns = parseInt(prompt("What namespace would you like to be included? (Use the namespace number)", "0"), 0);
+		requested_ns = (prompt("What namespace would you like to be included? (Use the namespace number) (If you would like to use mulitple namespaces, seperate each with \', \')", "0"), 0);
+		parse_requested_ns( requested_ns );
 		number = parseInt(prompt("How many links would you like added", "10"), 10);
 	}
 	
@@ -51,9 +52,17 @@ function make_link( page_element ){
 	var page_ns = page_element.ns;
 	var page_name = page_element.title;
 	var this_link = "";
-	if ( page_ns === accepted_ns ) {
+//	if ( page_ns === accepted_ns ) {
+	if ( accepted_ns.includes ( page_ns ) ) {
 		if ( page_ns === 6 || page_ns === 14 ) page_name = ':' + page_name;
 		this_link = '* [[' + page_name + ']]\n';
 	}
 	return this_link;
+}
+function parse_requested_ns ( requested_ns ){
+	var ns_string_array = requested_ns.split(", ");
+	for (index = 0; index < ns_string_array.length; ++index) {
+    	var this_ns = parseInt( ns_string_array[index] );
+    	accepted_ns.push( this_ns );
+	}
 }
