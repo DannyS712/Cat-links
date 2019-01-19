@@ -1,5 +1,9 @@
 var accepted_ns = [];
 
+var cl_config = {
+	debug: true,
+}
+
 mw.loader.using( 'mediawiki.util', function () {
     importScript('User:DannyS712 test/append.js');
     $(document).ready( function () { 
@@ -34,16 +38,14 @@ function cats () {
 		};
 		$.get( mw.config.get( 'wgScriptPath' ) + '/api.php', catRequest, function( catResponse ) {
 			var pages = catResponse.query.categorymembers;
-			var listed = [];
+			//var listed = [];
 			var links = "";
 			for (var i = 0; i < pages.length; i++) {
 				var this_link = make_link( pages[i] );
-				listed.push(this_link);
+				//listed.push(this_link);
 				links = links + this_link;
 			}
-			if ( links === "" ) {
-				alert( "There are no pages in the specified namespace in that category." );
-			}
+			if ( links === "" ) alert( "There are no pages in the specified namespace in that category." );
 			else addNewSection( 'Adding links with [[User:DannyS712/Cat links|cat links]]', 'Pages in [[:Category:' + page + ']]', links );
 		} );
 	}
@@ -60,6 +62,7 @@ function make_link( page_element ){
 	return this_link;
 }
 function parse_requested_ns ( requested_ns ){
+	if (cl_config.debug) onsole.log( requested_ns );
 	var ns_string_array = requested_ns.toString().split(", ");
 	for (index = 0; index < ns_string_array.length; ++index) {
     	var this_ns = parseInt( ns_string_array[index] );
