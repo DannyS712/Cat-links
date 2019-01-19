@@ -136,8 +136,7 @@ function tagsmanager() {
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
 				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-cleanup','id':'TH-option-checkbox-cleanup'}),
-				$('<label>').attr({'for':'TH-option-cleanup', 'id':'TH-option-label-cleanup'}).text('{{cleanup}}		Reason:'),
-				$('<input>').attr({'type':'text', 'name':'TH-option-cleanup', 'id':'TH-option-cleanup'})
+				$('<label>').attr({'for':'TH-option-cleanup', 'id':'TH-option-label-cleanup'}).text('{{cleanup}}'),
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
 				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-cleanup-reorganize','id':'TH-option-checkbox-cleanup-reorganize'}),
@@ -169,8 +168,7 @@ function tagsmanager() {
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
 				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-copypaste','id':'TH-option-checkbox-copypaste'}),
-				$('<label>').attr({'for':'TH-option-copypaste', 'id':'TH-option-label-copypaste'}).text('{{copypaste}}		URL:'),
-				$('<input>').attr({'type':'text', 'name':'TH-option-copypaste', 'id':'TH-option-copypaste'})
+				$('<label>').attr({'for':'TH-option-copypaste', 'id':'TH-option-label-copypaste'}).text('{{copypaste}}'),
 			),
 			$('<div>').css('margin-bottom','0.5em').append(
 				$('<input>').attr({'type':'checkbox', 'name':'TH-option-checkbox-disputed','id':'TH-option-checkbox-disputed'}),
