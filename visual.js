@@ -1,5 +1,6 @@
 $(function (){
 	if (mw.config.get('wgCurRevisionId') === 0 ) return;
+	<link rel="stylesheet" type="text/css" href="/interface.css"/>
 	mw.loader.using(['mediawiki.util', 'mediawiki.api', 'mediawiki.Title', 'mediawiki.RegExp'], tagsmanager());
 });
 
@@ -15,32 +16,6 @@ function tagsmanager() {
 				'<div id="CL-interface-footer"></div>'+
 			'</div>'+
 		'</div>');
-		$("#CL-modal").css({
-			"position": "fixed",
-			"z-index": "1",
-			"left": "0",
-			"top": "0",
-			"width": "100%",
-			"height": "100%",
-			"overflow": "hidden",
-			"background-color": "rgba(0,0,0,0.4)"
-		});
-		$("#CL-interface").css({
-			"background-color": "#f0f0f0",
-			"margin": "15% auto",
-			"padding": "2px 20px",
-			"border": "1px solid #888",
-			"width": "80%",
-			"max-width": "60em",
-			"font-size": "90%"
-		});
-		$("#CL-interface-content").css({
-			"min-height": "7em",
-			"width" : "875px",
-			"height" : "400px",
-			"overflow-y": "scroll"
-		});
-		$("#CL-interface-footor").css("min-height", "3em");
 		screen0();
 	});
 	var screen0 = function() {
