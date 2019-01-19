@@ -52,6 +52,7 @@ function make_link( page_element ){
 	var page_name = page_element.title;
 	var this_link = "";
 	if ( page_ns === accepted_ns ) {
+		if ( page_ns === 6 || page_ns === 14 ) page_name = ':' + page_name;
 		this_link = '* [[' + page_name + ']]\n';
 	}
 	return this_link;
