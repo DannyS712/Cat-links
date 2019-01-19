@@ -4,26 +4,6 @@ $(function (){
 });
 
 function tagsmanager() {
-	var config = {};
-	config.script = {
-		advert:  ' ([[User:Abelmoschus Esculentus/TagsManager.js|TagsManager.js]])',
-		version: ' (1.0.2)'
-	};
-	config.mw = mw.config.get( [
-		'wgArticleId',
-		'wgPageName',
-		'wgUserGroups',
-		'wgUserName',
-	]);
-	config.pagedata = {};
-	var API = new mw.Api( {
-		ajax: {
-			headers: { 
-				'Api-User-Agent': 'TagsManager/' + config.script.version + 
-					'(https://en.wikipedia.org/wiki/User:Abelmoschus_Esculentus/TagsManager)'
-			}
-		}
-	});
 	mw.util.addPortletLink('p-cactions', '#', 'Tags M', 'aca-tag', null, null, "#ca-move");
 	$('#aca-tag').on('click', function() {
 		$('body').prepend('<div id="CL-modal">'+
@@ -63,38 +43,11 @@ function tagsmanager() {
 		$("#CL-interface-footor").css("min-height", "3em");
 		screen0();
 	});
-	var pagedata = function() {
-		var checkPageData = function() {
-			if (config.pagedata.oldwikitext !== null) {
-				screen1();
-			}
-		};
-		API.get( {
-			action: 'query',
-			pageids: config.mw.wgArticleId,
-			prop: 'revisions',
-			rvprop: 'content'
-		})
-		.done( function(result) {
-			config.pagedata.oldwikitext = result.query.pages[config.mw.wgArticleId].revisions[0]['*'];
-			checkPageData();
-		})
-		.fail(function(c,r) {
-			API.abort();
-			var retry = confirm("Could not retrieve page wikitext:\n"+"\n\nTry again?");
-			if (retry) {
-				pagedata();
-			} 
-			else {
-				$("#CL-modal").remove();
-			}
-		});
-	};
 	var screen0 = function() {
 		$("#CL-interface-header, #CL-interface-content, #CL-interface-footer").empty();
 		$("#CL-interface-header").text("Tags Manager...");
 		$("#CL-interface-content").text("Loading...");
-		pagedata();
+		screen1();
 	};
 	var screen1 = function() {
 		$("#CL-interface-header, #CL-interface-content, #CL-interface-footer").empty();
@@ -233,13 +186,11 @@ function tagsmanager() {
 			$('<button>').attr('id', 'CL-next').text('Tag!'),
 			$('<button>').attr('id', 'CL-cancel').css('margin-left','3em').text('Cancel')
 		);
-		var content = config.pagedata.oldwikitext;
 		$("#CL-cancel").click(function(){
 			$("#CL-modal").remove();
 		});
 		$("#CL-next").click(function(){
 			var editsummary = $('#CL-editsummary').val();
-			var wikitext = "";
 			if ($("#CL-option-checkbox-Article").prop("checked")) console.log("Articles");
 			if ($("#CL-option-checkbox-Talk").prop("checked")) console.log("Talk");
 			if ($("#CL-option-checkbox-User").prop("checked")) console.log("User");
@@ -270,7 +221,6 @@ function tagsmanager() {
 			if ($("#CL-option-checkbox-Gadget_talk").prop("checked")) console.log("Gadget talk");
 			if ($("#CL-option-checkbox-Gadget_Definition").prop("checked")) console.log("Gadget Definition");
 			if ($("#CL-option-checkbox-Gadget_Definition_talk").prop("checked")) console.log("Gadget Definition talk");
-			wikitext += content;
 			screen2(wikitext, editsummary);
 		});
 	};
@@ -292,45 +242,5 @@ function tagsmanager() {
 				$('<button>').attr('id', 'CL-close').text('Close')
 			)
 		);
-		$("#CL-close").click( function(){
-			$("#CL-modal").remove();
-			window.location.reload();
-		});
-		$("CL-abort").click(function(){
-			API.abort();
-			$("#CL-modal").remove();
-			window.location.reload();
-		});
-		tag(wikitext, editsummary);
-	};
-	var tag = function(wikitext, editsummary) {
-		$("#CL-task0").css({"color":"#00F", "font-weight":"bold"});
-		$("#CL-status0").html("...");
-		if (editsummary === '') {
-			editsummary = "Editing tags";
-		}
-		API.postWithToken( 'edit', {
-			action: 'edit',
-			title: config.mw.wgPageName,
-			text: wikitext,
-			summary: editsummary + config.script.Talk
-		})
-		.done( function() {
-		$("#CL-task0").css({"color":"#000", "font-weight":""});
-				$("#CL-status0").append(" Done!");
-				$("#CL-finished, #CL-abort").toggle();
-		})
-		.fail( function(c,r) {
-			if (r.textStatus === 'abort') { return; }
-			var retry = confirm("Could not tag the page:\n" + "\n\nTry again?");
-			if (retry) {
-				tag(wikitext);
-			}
-			else {
-				$("#CL-task0").css({"color":"#F00", "font-weight":""});
-				$("#CL-status0").append(" Skipped");
-				$("#CL-finished, #CL-abort").toggle();
-			}
-		});
 	};
 };
