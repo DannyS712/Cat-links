@@ -1,0 +1,23 @@
+Per WP:NS
+
+All talk: page +1
+
+0: Article
+2: User
+4: Wikipedia
+6: File
+8: MediaWiki
+10: Template
+12: Help
+14: Category
+100: Portal
+108: Book
+118: Draft
+446: Education Program
+710: TimedText
+828: Module
+2300: Gadget
+2302: Gadget definition
+
+-1: Special
+-2: Media
