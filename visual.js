@@ -203,89 +203,25 @@ function tagsmanager() {
 			var wikitext = "";
 			var pos1, pos2, remove;
 			var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], d = new Date();
-			if ($("#TH-option-checkbox-multiple").prop("checked")) {
-				wikitext += "{{multiple issues|\n";
-			}
-			/******************************/
-			if ($("#TH-option-checkbox-advert").prop("checked")) {
-				wikitext += "{{advert|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			/******************************/
-			if ($("#TH-option-checkbox-allplot").prop("checked")) {
-				wikitext += "{{all plot|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			/******************************/
-			if ($("#TH-option-checkbox-autobiography").prop("checked")) {
-				wikitext += "{{autobiography|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			/******************************/
-			if ($("#TH-option-checkbox-BLPsources").prop("checked")) {
-				wikitext += "{{BLP sources|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			/******************************/
-			if ($("#TH-option-checkbox-BLPunsourced").prop("checked")) {
-				wikitext += "{{BLP unsourced|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			/******************************/
-			if ($("#TH-option-checkbox-citationstyle").prop("checked")) {
-				wikitext += "{{citation style|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			/******************************/
-			if ($("#TH-option-checkbox-cleanup").prop("checked")) {
-				wikitext += "{{cleanup|reason="+$('#TH-option-cleanup').val().trim()+"|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			/******************************/
-			if ($("#TH-option-checkbox-cleanup-reorganize").prop("checked")) {
-				wikitext += "{{cleanup-reorganize|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			/******************************/
-			if ($("#TH-option-checkbox-closeparaphrasing").prop("checked")) {
-				wikitext += "{{close paraphrasing|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			/******************************/
-			if ($("#TH-option-checkbox-COI").prop("checked")) {
-				wikitext += "{{COI|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			/******************************/
-			if ($("#TH-option-checkbox-condense").prop("checked")) {
-				wikitext += "{{condense|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			/******************************/
-			if ($("#TH-option-checkbox-confusing").prop("checked")) {
-				wikitext += "{{confusing|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			/******************************/
-			if ($("#TH-option-checkbox-context").prop("checked")) {
-				wikitext += "{{context|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			/******************************/
-			if ($("#TH-option-checkbox-copyedit").prop("checked")) {
-				wikitext += "{{copy edit|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			/******************************/
-			if ($("#TH-option-checkbox-copypaste").prop("checked")) {
-				wikitext += "{{copypaste|url="+$('#TH-option-copypaste').val().trim()+"|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			/******************************/
-			if ($("#TH-option-checkbox-disputed").prop("checked")) {
-				wikitext += "{{disputed|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			/******************************/
-			if ($("#TH-option-checkbox-essay-like").prop("checked")) {
-				wikitext += "{{essay-like|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			/******************************/
-			if ($("#TH-option-checkbox-expandlanguage").prop("checked")) {
-				wikitext += "{{expand language|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			/******************************/
-			if ($("#TH-option-checkbox-expertneeded").prop("checked")) {
-				wikitext += "{{expert needed|date="+monthNames[d.getMonth()]+' '+d.getFullYear()+"}}\n";
-			}
-			/******************************/			
-			if ($("#TH-option-checkbox-multiple").prop("checked")) {
-				wikitext += "}}\n";
-			}
+			if ($("#TH-option-checkbox-advert").prop("checked")) wikitext += "{{advert}}\n";
+			if ($("#TH-option-checkbox-allplot").prop("checked")) wikitext += "{{all plot}}\n";
+			if ($("#TH-option-checkbox-autobiography").prop("checked")) wikitext += "{{autobiography}}\n";
+			if ($("#TH-option-checkbox-BLPsources").prop("checked")) wikitext += "{{BLP sources}}\n";
+			if ($("#TH-option-checkbox-BLPunsourced").prop("checked")) wikitext += "{{BLP unsourced}}\n";
+			if ($("#TH-option-checkbox-citationstyle").prop("checked")) wikitext += "{{citation style}}\n";
+			if ($("#TH-option-checkbox-cleanup").prop("checked")) wikitext += "{{cleanup}}\n";
+			if ($("#TH-option-checkbox-cleanup-reorganize").prop("checked")) wikitext += "{{cleanup-reorganize}}\n";
+			if ($("#TH-option-checkbox-closeparaphrasing").prop("checked")) wikitext += "{{close paraphrasing}}\n";
+			if ($("#TH-option-checkbox-COI").prop("checked")) wikitext += "{{COI}}\n";
+			if ($("#TH-option-checkbox-condense").prop("checked")) wikitext += "{{condense}}\n";
+			if ($("#TH-option-checkbox-confusing").prop("checked")) wikitext += "{{confusing}}\n";
+			if ($("#TH-option-checkbox-context").prop("checked")) wikitext += "{{context}}\n";
+			if ($("#TH-option-checkbox-copyedit").prop("checked")) wikitext += "{{copy edit}}\n";
+			if ($("#TH-option-checkbox-copypaste").prop("checked")) wikitext += "{{copypaste}}\n";
+			if ($("#TH-option-checkbox-disputed").prop("checked")) wikitext += "{{disputed}}\n";
+			if ($("#TH-option-checkbox-essay-like").prop("checked")) wikitext += "{{essay-like}}\n";
+			if ($("#TH-option-checkbox-expandlanguage").prop("checked")) wikitext += "{{expand language}}\n";
+			if ($("#TH-option-checkbox-expertneeded").prop("checked")) wikitext += "{{expert needed}}\n";
 			wikitext += content;
 			screen2(wikitext, editsummary);
 		});
