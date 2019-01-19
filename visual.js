@@ -54,7 +54,7 @@ function tagsmanager() {
 		$("#CL-interface-header").text("Category links: Namespaces");
 		$("#CL-interface-header").append(
 			$('<label>').text('Edit summary: '),
-			$('<input>').attr({'type':'text','id':'CL-cat-name','name':'CL-cat-name'}),
+			$('<input>').attr({'type':'text','id':'CL-cat-name','name':'CL-cat-name'})
 		);
 		$("#CL-interface-content").append(
 			$('<div>').css('margin-bottom','0.5em').append(
