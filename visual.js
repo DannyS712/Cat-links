@@ -212,35 +212,38 @@ function get_chosen_ns_s(){
   		"Gadget Definition": 2302,
   		"Gadget Definition talk": 2303
 	};
+	var chosen_ns_s_array = [];
 
-	if ($("#CL-option-checkbox-Article").prop("checked")) console.log(ns_dict["Article"]);
-	if ($("#CL-option-checkbox-Talk").prop("checked")) console.log(ns_dict["Talk"]);
-	if ($("#CL-option-checkbox-User").prop("checked")) console.log(ns_dict["User"]);
-	if ($("#CL-option-checkbox-User_talk").prop("checked")) console.log(ns_dict["User talk"]);
-	if ($("#CL-option-checkbox-Wikipedia").prop("checked")) console.log(ns_dict["Wikipedia"]);
-	if ($("#CL-option-checkbox-Wikipedia_talk").prop("checked")) console.log(ns_dict["Wikipedia talk"]);
-	if ($("#CL-option-checkbox-File").prop("checked")) console.log(ns_dict["File"]);
-	if ($("#CL-option-checkbox-File_talk").prop("checked")) console.log(ns_dict["File talk"]);
-	if ($("#CL-option-checkbox-MediaWiki").prop("checked")) console.log(ns_dict["MediaWiki"]);
-	if ($("#CL-option-checkbox-MediaWiki_talk").prop("checked")) console.log(ns_dict["MediaWiki talk"]);
-	if ($("#CL-option-checkbox-Template").prop("checked")) console.log(ns_dict["Template"]);
-	if ($("#CL-option-checkbox-Template_talk").prop("checked")) console.log(ns_dict["Template talk"]);
-	if ($("#CL-option-checkbox-Help").prop("checked")) console.log(ns_dict["Help"]);
-	if ($("#CL-option-checkbox-Help_talk").prop("checked")) console.log(ns_dict["Help talk"]);
-	if ($("#CL-option-checkbox-Category").prop("checked")) console.log(ns_dict["Category"]);
-	if ($("#CL-option-checkbox-Category_talk").prop("checked")) console.log(ns_dict["Category talk"]);
-	if ($("#CL-option-checkbox-Portal").prop("checked")) console.log(ns_dict["Portal"]);
-	if ($("#CL-option-checkbox-Portal_talk").prop("checked")) console.log(ns_dict["Portal talk"]);
-	if ($("#CL-option-checkbox-Book").prop("checked")) console.log(ns_dict["Book"]);
-	if ($("#CL-option-checkbox-Book_talk").prop("checked")) console.log(ns_dict["Book talk"]);
-	if ($("#CL-option-checkbox-Draft").prop("checked")) console.log(ns_dict["Draft"]);
-	if ($("#CL-option-checkbox-Draft_talk").prop("checked")) console.log(ns_dict["Draft talk"]);
-	if ($("#CL-option-checkbox-TimedText").prop("checked")) console.log(ns_dict["TimedText"]);
-	if ($("#CL-option-checkbox-TimedText_talk").prop("checked")) console.log(ns_dict["TimedText talk"]);
-	if ($("#CL-option-checkbox-Module").prop("checked")) console.log(ns_dict["Module"]);
-	if ($("#CL-option-checkbox-Module_talk").prop("checked")) console.log(ns_dict["Module talk"]);
-	if ($("#CL-option-checkbox-Gadget").prop("checked")) console.log(ns_dict["Gadget"]);
-	if ($("#CL-option-checkbox-Gadget_talk").prop("checked")) console.log(ns_dict["Gadget talk"]);
-	if ($("#CL-option-checkbox-Gadget_Definition").prop("checked")) console.log(ns_dict["Gadget Definition"]);
-	if ($("#CL-option-checkbox-Gadget_Definition_talk").prop("checked")) console.log(ns_dict["Gadget Definition talk"]);
+	if ($("#CL-option-checkbox-Article").prop("checked")) chosen_ns_s_array.push(ns_dict["Article"]);
+	if ($("#CL-option-checkbox-Talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Talk"]);
+	if ($("#CL-option-checkbox-User").prop("checked")) chosen_ns_s_array.push(ns_dict["User"]);
+	if ($("#CL-option-checkbox-User_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["User talk"]);
+	if ($("#CL-option-checkbox-Wikipedia").prop("checked")) chosen_ns_s_array.push(ns_dict["Wikipedia"]);
+	if ($("#CL-option-checkbox-Wikipedia_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Wikipedia talk"]);
+	if ($("#CL-option-checkbox-File").prop("checked")) chosen_ns_s_array.push(ns_dict["File"]);
+	if ($("#CL-option-checkbox-File_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["File talk"]);
+	if ($("#CL-option-checkbox-MediaWiki").prop("checked")) chosen_ns_s_array.push(ns_dict["MediaWiki"]);
+	if ($("#CL-option-checkbox-MediaWiki_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["MediaWiki talk"]);
+	if ($("#CL-option-checkbox-Template").prop("checked")) chosen_ns_s_array.push(ns_dict["Template"]);
+	if ($("#CL-option-checkbox-Template_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Template talk"]);
+	if ($("#CL-option-checkbox-Help").prop("checked")) chosen_ns_s_array.push(ns_dict["Help"]);
+	if ($("#CL-option-checkbox-Help_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Help talk"]);
+	if ($("#CL-option-checkbox-Category").prop("checked")) chosen_ns_s_array.push(ns_dict["Category"]);
+	if ($("#CL-option-checkbox-Category_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Category talk"]);
+	if ($("#CL-option-checkbox-Portal").prop("checked")) chosen_ns_s_array.push(ns_dict["Portal"]);
+	if ($("#CL-option-checkbox-Portal_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Portal talk"]);
+	if ($("#CL-option-checkbox-Book").prop("checked")) chosen_ns_s_array.push(ns_dict["Book"]);
+	if ($("#CL-option-checkbox-Book_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Book talk"]);
+	if ($("#CL-option-checkbox-Draft").prop("checked")) chosen_ns_s_array.push(ns_dict["Draft"]);
+	if ($("#CL-option-checkbox-Draft_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Draft talk"]);
+	if ($("#CL-option-checkbox-TimedText").prop("checked")) chosen_ns_s_array.push(ns_dict["TimedText"]);
+	if ($("#CL-option-checkbox-TimedText_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["TimedText talk"]);
+	if ($("#CL-option-checkbox-Module").prop("checked")) chosen_ns_s_array.push(ns_dict["Module"]);
+	if ($("#CL-option-checkbox-Module_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Module talk"]);
+	if ($("#CL-option-checkbox-Gadget").prop("checked")) chosen_ns_s_array.push(ns_dict["Gadget"]);
+	if ($("#CL-option-checkbox-Gadget_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Gadget talk"]);
+	if ($("#CL-option-checkbox-Gadget_Definition").prop("checked")) chosen_ns_s_array.push(ns_dict["Gadget Definition"]);
+	if ($("#CL-option-checkbox-Gadget_Definition_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Gadget Definition talk"]);
+
+	console.log(chosen_ns_s_array);
 }
