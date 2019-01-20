@@ -183,7 +183,7 @@ function get_chosen(){
 	var chosen_nss = get_chosen_nss();
 	var choices = {
 		cat: chosen_category,
-		nss: chosen_ns_s_array
+		nss: chosen_nss
 	};
 	console.log( choices );
 	console.log ( sanity_check( choices ) );
