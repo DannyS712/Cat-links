@@ -38,7 +38,7 @@ function tagsmanager() {
 				)
 			),
 			$('<div>').attr({'class': 'CL-row'}).append(
-				$('<div').attr({'class': 'CL-column'}).append(
+				$('<div>').attr({'class': 'CL-column'}).append(
 					$('<div>').css('margin-bottom','0.5em').append(
 						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Article','id':'CL-option-checkbox-Article'}),
 						$('<label>').attr({'for':'CL-option-Article', 'id':'CL-option-label-Article'}).text('Articles')
