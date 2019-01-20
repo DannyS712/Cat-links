@@ -37,7 +37,7 @@ function tagsmanager() {
 					'Namespaces to add from:'
 				)
 			),
-			$('<div').attr({'class': 'CL-row'}).append(
+			$('<div>').attr({'class': 'CL-row'}).append(
 				$('<div').attr({'class': 'CL-column'}).append(
 					$('<div>').css('margin-bottom','0.5em').append(
 						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Article','id':'CL-option-checkbox-Article'}),
@@ -100,7 +100,7 @@ function tagsmanager() {
 						$('<label>').attr({'for':'CL-option-Gadget_Definition', 'id':'CL-option-label-Gadget_Definition'}).text('Gadget Definition')
 					)
 				),
-				$('<div').attr({'class': 'CL-column'}).append(
+				$('<div>').attr({'class': 'CL-column'}).append(
 					$('<div>').css('margin-bottom','0.5em').append(
 						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Talk','id':'CL-option-checkbox-Talk'}),
 						$('<label>').attr({'for':'CL-option-Talk', 'id':'CL-option-label-Talk'}).text('Talk')
