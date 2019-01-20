@@ -174,7 +174,7 @@ function tagsmanager() {
 		$("#CL-next").click(function(){
 			var chosen_category = $('#CL-cat-name').val();
 			console.log( chosen_category );
-
+			get_chosen_ns_s();
 			$("#CL-modal").remove();
 		});
 	};
