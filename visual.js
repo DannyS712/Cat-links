@@ -37,125 +37,131 @@ function tagsmanager() {
 					'Namespaces to add from:'
 				)
 			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Article','id':'CL-option-checkbox-Article'}),
-				$('<label>').attr({'for':'CL-option-Article', 'id':'CL-option-label-Article'}).text('Articles')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Talk','id':'CL-option-checkbox-Talk'}),
-				$('<label>').attr({'for':'CL-option-Talk', 'id':'CL-option-label-Talk'}).text('Talk')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-User','id':'CL-option-checkbox-User'}),
-				$('<label>').attr({'for':'CL-option-User', 'id':'CL-option-label-User'}).text('User')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-User_talk','id':'CL-option-checkbox-User_talk'}),
-				$('<label>').attr({'for':'CL-option-User_talk', 'id':'CL-option-label-User_talk'}).text('User talk')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Wikipedia','id':'CL-option-checkbox-Wikipedia'}),
-				$('<label>').attr({'for':'CL-option-Wikipedia', 'id':'CL-option-label-Wikipedia'}).text('Wikipedia')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Wikipedia_talk','id':'CL-option-checkbox-Wikipedia_talk'}),
-				$('<label>').attr({'for':'CL-option-Wikipedia_talk', 'id':'CL-option-label-Wikipedia_talk'}).text('Wikipedia talk')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-File','id':'CL-option-checkbox-File'}),
-				$('<label>').attr({'for':'CL-option-File', 'id':'CL-option-label-File'}).text('File')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-File_talk','id':'CL-option-checkbox-File_talk'}),
-				$('<label>').attr({'for':'CL-option-File_talk', 'id':'CL-option-label-File_talk'}).text('File talk')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-MediaWiki','id':'CL-option-checkbox-MediaWiki'}),
-				$('<label>').attr({'for':'CL-option-MediaWiki', 'id':'CL-option-label-MediaWiki'}).text('MediaWiki')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-MediaWiki_talk','id':'CL-option-checkbox-MediaWiki_talk'}),
-				$('<label>').attr({'for':'CL-option-MediaWiki_talk', 'id':'CL-option-label-MediaWiki_talk'}).text('MediaWiki talk')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Template','id':'CL-option-checkbox-Template'}),
-				$('<label>').attr({'for':'CL-option-Template', 'id':'CL-option-label-Template'}).text('Template')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Template_talk','id':'CL-option-checkbox-Template_talk'}),
-				$('<label>').attr({'for':'CL-option-Template_talk', 'id':'CL-option-label-Template_talk'}).text('Template talk')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Help','id':'CL-option-checkbox-Help'}),
-				$('<label>').attr({'for':'CL-option-Help', 'id':'CL-option-label-Help'}).text('Help')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Help_talk','id':'CL-option-checkbox-Help_talk'}),
-				$('<label>').attr({'for':'CL-option-Help_talk', 'id':'CL-option-label-Help_talk'}).text('Help talk')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Category','id':'CL-option-checkbox-Category'}),
-				$('<label>').attr({'for':'CL-option-Category', 'id':'CL-option-label-Category'}).text('Category')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Category_talk','id':'CL-option-checkbox-Category_talk'}),
-				$('<label>').attr({'for':'CL-option-Category_talk', 'id':'CL-option-label-Category_talk'}).text('Category talk')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Portal','id':'CL-option-checkbox-Portal'}),
-				$('<label>').attr({'for':'CL-option-Portal', 'id':'CL-option-label-Portal'}).text('Portal')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Portal_talk','id':'CL-option-checkbox-Portal_talk'}),
-				$('<label>').attr({'for':'CL-option-Portal_talk', 'id':'CL-option-label-Portal_talk'}).text('Portal talk')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Book','id':'CL-option-checkbox-Book'}),
-				$('<label>').attr({'for':'CL-option-Book', 'id':'CL-option-label-Book'}).text('Book')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Book_talk','id':'CL-option-checkbox-Book_talk'}),
-				$('<label>').attr({'for':'CL-option-Book_talk', 'id':'CL-option-label-Book_talk'}).text('Book talk')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Draft','id':'CL-option-checkbox-Draft'}),
-				$('<label>').attr({'for':'CL-option-Draft', 'id':'CL-option-label-Draft'}).text('Draft')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Draft_talk','id':'CL-option-checkbox-Draft_talk'}),
-				$('<label>').attr({'for':'CL-option-Draft_talk', 'id':'CL-option-label-Draft_talk'}).text('Draft talk')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-TimedText','id':'CL-option-checkbox-TimedText'}),
-				$('<label>').attr({'for':'CL-option-TimedText', 'id':'CL-option-label-TimedText'}).text('TimedText')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-TimedText_talk','id':'CL-option-checkbox-TimedText_talk'}),
-				$('<label>').attr({'for':'CL-option-TimedText_talk', 'id':'CL-option-label-TimedText_talk'}).text('TimedText talk')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Module','id':'CL-option-checkbox-Module'}),
-				$('<label>').attr({'for':'CL-option-Module', 'id':'CL-option-label-Module'}).text('Module')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Module_talk','id':'CL-option-checkbox-Module_talk'}),
-				$('<label>').attr({'for':'CL-option-Module_talk', 'id':'CL-option-label-Module_talk'}).text('Module talk')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Gadget','id':'CL-option-checkbox-Gadget'}),
-				$('<label>').attr({'for':'CL-option-Gadget', 'id':'CL-option-label-Gadget'}).text('Gadget')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Gadget_talk','id':'CL-option-checkbox-Gadget_talk'}),
-				$('<label>').attr({'for':'CL-option-Gadget_talk', 'id':'CL-option-label-Gadget_talk'}).text('Gadget talk')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Gadget_Definition','id':'CL-option-checkbox-Gadget_Definition'}),
-				$('<label>').attr({'for':'CL-option-Gadget_Definition', 'id':'CL-option-label-Gadget_Definition'}).text('Gadget Definition')
-			),
-			$('<div>').css('margin-bottom','0.5em').append(
-				$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Gadget_Definition_talk','id':'CL-option-checkbox-Gadget_Definition_talk'}),
-				$('<label>').attr({'for':'CL-option-Gadget_Definition_talk', 'id':'CL-option-label-Gadget_Definition_talk'}).text('Gadget Definition talk')
+			$('<div').attr({'class': 'CL-row'}).append(
+				$('<div').attr({'class': 'CL-column'}).append(
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Article','id':'CL-option-checkbox-Article'}),
+						$('<label>').attr({'for':'CL-option-Article', 'id':'CL-option-label-Article'}).text('Articles')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-User','id':'CL-option-checkbox-User'}),
+						$('<label>').attr({'for':'CL-option-User', 'id':'CL-option-label-User'}).text('User')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Wikipedia','id':'CL-option-checkbox-Wikipedia'}),
+						$('<label>').attr({'for':'CL-option-Wikipedia', 'id':'CL-option-label-Wikipedia'}).text('Wikipedia')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-File','id':'CL-option-checkbox-File'}),
+						$('<label>').attr({'for':'CL-option-File', 'id':'CL-option-label-File'}).text('File')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-MediaWiki','id':'CL-option-checkbox-MediaWiki'}),
+						$('<label>').attr({'for':'CL-option-MediaWiki', 'id':'CL-option-label-MediaWiki'}).text('MediaWiki')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Template','id':'CL-option-checkbox-Template'}),
+						$('<label>').attr({'for':'CL-option-Template', 'id':'CL-option-label-Template'}).text('Template')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Help','id':'CL-option-checkbox-Help'}),
+						$('<label>').attr({'for':'CL-option-Help', 'id':'CL-option-label-Help'}).text('Help')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Category','id':'CL-option-checkbox-Category'}),
+						$('<label>').attr({'for':'CL-option-Category', 'id':'CL-option-label-Category'}).text('Category')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Portal','id':'CL-option-checkbox-Portal'}),
+						$('<label>').attr({'for':'CL-option-Portal', 'id':'CL-option-label-Portal'}).text('Portal')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Book','id':'CL-option-checkbox-Book'}),
+						$('<label>').attr({'for':'CL-option-Book', 'id':'CL-option-label-Book'}).text('Book')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Draft','id':'CL-option-checkbox-Draft'}),
+						$('<label>').attr({'for':'CL-option-Draft', 'id':'CL-option-label-Draft'}).text('Draft')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-TimedText','id':'CL-option-checkbox-TimedText'}),
+						$('<label>').attr({'for':'CL-option-TimedText', 'id':'CL-option-label-TimedText'}).text('TimedText')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Module','id':'CL-option-checkbox-Module'}),
+						$('<label>').attr({'for':'CL-option-Module', 'id':'CL-option-label-Module'}).text('Module')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Gadget','id':'CL-option-checkbox-Gadget'}),
+						$('<label>').attr({'for':'CL-option-Gadget', 'id':'CL-option-label-Gadget'}).text('Gadget')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Gadget_Definition','id':'CL-option-checkbox-Gadget_Definition'}),
+						$('<label>').attr({'for':'CL-option-Gadget_Definition', 'id':'CL-option-label-Gadget_Definition'}).text('Gadget Definition')
+					)
+				),
+				$('<div').attr({'class': 'CL-column'}).append(
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Talk','id':'CL-option-checkbox-Talk'}),
+						$('<label>').attr({'for':'CL-option-Talk', 'id':'CL-option-label-Talk'}).text('Talk')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-User_talk','id':'CL-option-checkbox-User_talk'}),
+						$('<label>').attr({'for':'CL-option-User_talk', 'id':'CL-option-label-User_talk'}).text('User talk')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Wikipedia_talk','id':'CL-option-checkbox-Wikipedia_talk'}),
+						$('<label>').attr({'for':'CL-option-Wikipedia_talk', 'id':'CL-option-label-Wikipedia_talk'}).text('Wikipedia talk')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-File_talk','id':'CL-option-checkbox-File_talk'}),
+						$('<label>').attr({'for':'CL-option-File_talk', 'id':'CL-option-label-File_talk'}).text('File talk')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-MediaWiki_talk','id':'CL-option-checkbox-MediaWiki_talk'}),
+						$('<label>').attr({'for':'CL-option-MediaWiki_talk', 'id':'CL-option-label-MediaWiki_talk'}).text('MediaWiki talk')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Template_talk','id':'CL-option-checkbox-Template_talk'}),
+						$('<label>').attr({'for':'CL-option-Template_talk', 'id':'CL-option-label-Template_talk'}).text('Template talk')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Help_talk','id':'CL-option-checkbox-Help_talk'}),
+						$('<label>').attr({'for':'CL-option-Help_talk', 'id':'CL-option-label-Help_talk'}).text('Help talk')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Category_talk','id':'CL-option-checkbox-Category_talk'}),
+						$('<label>').attr({'for':'CL-option-Category_talk', 'id':'CL-option-label-Category_talk'}).text('Category talk')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Portal_talk','id':'CL-option-checkbox-Portal_talk'}),
+						$('<label>').attr({'for':'CL-option-Portal_talk', 'id':'CL-option-label-Portal_talk'}).text('Portal talk')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Book_talk','id':'CL-option-checkbox-Book_talk'}),
+						$('<label>').attr({'for':'CL-option-Book_talk', 'id':'CL-option-label-Book_talk'}).text('Book talk')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Draft_talk','id':'CL-option-checkbox-Draft_talk'}),
+						$('<label>').attr({'for':'CL-option-Draft_talk', 'id':'CL-option-label-Draft_talk'}).text('Draft talk')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-TimedText_talk','id':'CL-option-checkbox-TimedText_talk'}),
+						$('<label>').attr({'for':'CL-option-TimedText_talk', 'id':'CL-option-label-TimedText_talk'}).text('TimedText talk')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Module_talk','id':'CL-option-checkbox-Module_talk'}),
+						$('<label>').attr({'for':'CL-option-Module_talk', 'id':'CL-option-label-Module_talk'}).text('Module talk')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Gadget_talk','id':'CL-option-checkbox-Gadget_talk'}),
+						$('<label>').attr({'for':'CL-option-Gadget_talk', 'id':'CL-option-label-Gadget_talk'}).text('Gadget talk')
+					),
+					$('<div>').css('margin-bottom','0.5em').append(
+						$('<input>').attr({'type':'checkbox', 'name':'CL-option-checkbox-Gadget_Definition_talk','id':'CL-option-checkbox-Gadget_Definition_talk'}),
+						$('<label>').attr({'for':'CL-option-Gadget_Definition_talk', 'id':'CL-option-label-Gadget_Definition_talk'}).text('Gadget Definition talk')
+					)
+				)
 			)
 		);
 		$("#CL-interface-footer").append(
