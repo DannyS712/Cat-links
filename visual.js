@@ -178,40 +178,49 @@ function cat_links_main() {
 	};
 }
 function get_chosen(){
+	var chosen_category = $('#CL-cat-name').val();
+	var chosen_nss = get_chosen_nss();
+	var choices = {
+		cat: chosen_category,
+		nss: chosen_ns_s_array
+	};
+	console.log( choices );
+	console.log ( sanity_check( choices ) );
+}
+function get_chosen_nss(){
 	var ns_dict = {
-  		"Article": 0,
-  		"Talk": 1,
-  		"User": 2,
-  		"User talk": 3,
-  		"Wikipedia": 4,
-  		"Wikipedia talk": 5,
-  		"File": 6,
-  		"File talk": 7,
-  		"MediaWiki": 8,
-  		"MediaWiki talk": 9,
-  		"Template": 10,
-  		"Template talk": 11,
-  		"Help": 12,
-  		"Help talk": 13,
-  		"Category": 14,
-  		"Category talk": 15,
-  		"Portal": 100,
-  		"Portal talk": 101,
-  		"Book": 108,
-  		"Book talk": 109,
-  		"Draft": 118,
-  		"Draft talk": 119,
-  		"TimedText": 710,
-  		"TimedText talk": 711,
-  		"Module": 828,
-  		"Module talk": 829,
-  		"Gadget": 2300,
-  		"Gadget talk": 2301,
-  		"Gadget Definition": 2302,
-  		"Gadget Definition talk": 2303
+		"Article": 0,
+		"Talk": 1,
+		"User": 2,
+		"User talk": 3,
+		"Wikipedia": 4,
+		"Wikipedia talk": 5,
+		"File": 6,
+		"File talk": 7,
+		"MediaWiki": 8,
+		"MediaWiki talk": 9,
+		"Template": 10,
+		"Template talk": 11,
+		"Help": 12,
+		"Help talk": 13,
+		"Category": 14,
+		"Category talk": 15,
+		"Portal": 100,
+		"Portal talk": 101,
+		"Book": 108,
+		"Book talk": 109,
+		"Draft": 118,
+		"Draft talk": 119,
+		"TimedText": 710,
+		"TimedText talk": 711,
+		"Module": 828,
+		"Module talk": 829,
+		"Gadget": 2300,
+		"Gadget talk": 2301,
+		"Gadget Definition": 2302,
+		"Gadget Definition talk": 2303
 	};
 	var chosen_ns_s_array = [];
-	var chosen_category = $('#CL-cat-name').val();
 
 	if ($("#CL-option-checkbox-Article").prop("checked")) chosen_ns_s_array.push(ns_dict["Article"]);
 	if ($("#CL-option-checkbox-Talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Talk"]);
@@ -244,12 +253,7 @@ function get_chosen(){
 	if ($("#CL-option-checkbox-Gadget_Definition").prop("checked")) chosen_ns_s_array.push(ns_dict["Gadget Definition"]);
 	if ($("#CL-option-checkbox-Gadget_Definition_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Gadget Definition talk"]);
 
-	var choices = {
-		cat: chosen_category,
-		nss: chosen_ns_s_array
-	};
-	console.log( choices );
-	console.log ( sanity_check( choices ) );
+	return chosen_ns_s_array;
 }
 function sanity_check( choices ){
 	if (choices.cat === null || choices.cat === ''){
