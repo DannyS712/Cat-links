@@ -16,13 +16,8 @@ mw.loader.using( 'mediawiki.util', function () {
 } );
 function cats () {
 	var page = prompt("Please enter the category name (not including \"Category:\")", "Wikipedians");
-	var number = parseInt(prompt("How many links would you like added", "10"), 10);
-
-	if (number == -1){
-		requested_ns = prompt("What namespace would you like to be included? (Use the namespace number) (If you would like to use mulitple namespaces, seperate each with \', \', or use \'all\' to allow all namespaces)", "0");
-		parse_requested_ns( requested_ns );
-		number = parseInt(prompt("How many links would you like added", "10"), 10);
-	}
+	requested_ns = prompt("What namespace would you like to be included? (Use the namespace number) (If you would like to use mulitple namespaces, seperate each with \', \', or use \'all\' to allow all namespaces)", "0");
+	parse_requested_ns( requested_ns );
 	
 	if (page === null || page === "") {
 	  console.log( "User cancelled the prompt." );
@@ -31,7 +26,7 @@ function cats () {
 		var catRequest = {
             action: 'query',
             list: 'categorymembers',
-            cmlimit: number,
+            cmlimit: 'max',
             cmtitle: 'Category:' + page,
             cmprop: 'title',
             format: 'json'
@@ -43,7 +38,7 @@ function cats () {
 				var this_link = make_link( pages[i] );
 				links = links + this_link;
 			}
-			if ( links === "" ) alert( "There are no pages in the specified namespace in that category." );
+			if ( links === "" ) alert( "There are no pages in the specified namespace(s) in that category." );
 			else addNewSection( 'Adding links with [[User:DannyS712/Cat links|cat links]]', 'Pages in [[:Category:' + page + ']]', links );
 		} );
 	}
