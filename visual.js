@@ -172,14 +172,12 @@ function tagsmanager() {
 			$("#CL-modal").remove();
 		});
 		$("#CL-next").click(function(){
-			var chosen_category = $('#CL-cat-name').val();
-			console.log( chosen_category );
-			get_chosen_ns_s();
+			get_chosen();
 			$("#CL-modal").remove();
 		});
 	};
 }
-function get_chosen_ns_s(){
+function get_chosen(){
 	var ns_dict = {
   		"Article": 0,
   		"Talk": 1,
@@ -213,6 +211,7 @@ function get_chosen_ns_s(){
   		"Gadget Definition talk": 2303
 	};
 	var chosen_ns_s_array = [];
+	var chosen_category = $('#CL-cat-name').val();
 
 	if ($("#CL-option-checkbox-Article").prop("checked")) chosen_ns_s_array.push(ns_dict["Article"]);
 	if ($("#CL-option-checkbox-Talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Talk"]);
@@ -245,5 +244,12 @@ function get_chosen_ns_s(){
 	if ($("#CL-option-checkbox-Gadget_Definition").prop("checked")) chosen_ns_s_array.push(ns_dict["Gadget Definition"]);
 	if ($("#CL-option-checkbox-Gadget_Definition_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Gadget Definition talk"]);
 
-	console.log(chosen_ns_s_array);
+	//console.log( chosen_ns_s_array );
+	//console.log( chosen_category );
+
+	var choices = {
+		cat: chosen_category,
+		nss: chosen_ns_s_array
+	};
+	console.log( choices );
 }
