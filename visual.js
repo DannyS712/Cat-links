@@ -1,11 +1,11 @@
 $(function (){
 	if (mw.config.get('wgCurRevisionId') === 0 ) return;
 	mw.loader.load('//en.wikipedia.org/w/index.php?title=User:DannyS712 test/interface.css&action=raw&ctype=text/css', 'text/css'); // Import stylesheet
-	mw.loader.using(['mediawiki.util', 'mediawiki.api', 'mediawiki.Title', 'mediawiki.RegExp'], tagsmanager());
+	mw.loader.using(['mediawiki.util', 'mediawiki.api', 'mediawiki.Title', 'mediawiki.RegExp'], cat_links_main());
 });
 
-function tagsmanager() {
-	mw.util.addPortletLink('p-cactions', '#', 'Tags M', 'aca-tag', null, null, "#ca-move");
+function cat_links_main() {
+	mw.util.addPortletLink('p-cactions', '#', 'CL', 'aca-tag', null, null, "#ca-move");
 	$('#aca-tag').on('click', function() {
 		$('body').prepend('<div id="CL-modal">'+
 			'<div id="CL-interface">'+
@@ -244,12 +244,19 @@ function get_chosen(){
 	if ($("#CL-option-checkbox-Gadget_Definition").prop("checked")) chosen_ns_s_array.push(ns_dict["Gadget Definition"]);
 	if ($("#CL-option-checkbox-Gadget_Definition_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Gadget Definition talk"]);
 
-	//console.log( chosen_ns_s_array );
-	//console.log( chosen_category );
-
 	var choices = {
 		cat: chosen_category,
 		nss: chosen_ns_s_array
 	};
 	console.log( choices );
+	console.log ( sanity_check( choices ) );
+}
+function sanity_check( choices ){
+	if (choices.cat === null || choices.cat === ''){
+		return false;
+	}
+	if (choices.nss.length === 0){
+		return false;
+	}
+	return true;
 }
