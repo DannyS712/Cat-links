@@ -1,6 +1,6 @@
 $(function (){
 	if (mw.config.get('wgCurRevisionId') === 0 ) return;
-	mw.loader.load('//en.wikipedia.org/w/index.php?title=User:DannyS712 test/interface.css&action=raw&ctype=text/css', 'text/css'); // Import stylesheet
+	mw.loader.load('//en.wikipedia.org/w/index.php?title=User:DannyS712 test/cat links 3.css&action=raw&ctype=text/css', 'text/css'); // Import stylesheet
 	importScript('User:DannyS712 test/append.js');
 	mw.loader.using(['mediawiki.util', 'mediawiki.api', 'mediawiki.Title', 'mediawiki.RegExp'], cat_links_main());
 });
