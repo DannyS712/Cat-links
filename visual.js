@@ -283,7 +283,7 @@ function add_links (choices) {
 			links = links + this_link;
 		}
 		if ( links === "" ) alert( "There are no pages in the specified namespace(s) in that category." );
-		else addNewSection( 'Adding links with [[User:DannyS712/Cat links|cat links]]', 'Pages in [[:Category:' + page + ']]', links );
+		else addNewSection( 'Adding links with [[User:DannyS712/Cat links|cat links]]', 'Pages in [[:Category:' + choices.cat + ']]', links );
 	} );
 }
 function make_link( page_element, namespaces ){
