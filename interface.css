@@ -20,8 +20,7 @@
 #CL-interface-content {
 	min-height: 7em;
 	width : 875px;
-	height : 400px;
-	overflow-y: scroll;
+	height : 100%;
 }
 #CL-interface-footor {
 	min-height: 3em
