@@ -271,7 +271,7 @@ function add_links (choices) {
         action: 'query',
         list: 'categorymembers',
         cmlimit: 'max',
-        cmtitle: 'Category:' + chaices.cat,
+        cmtitle: 'Category:' + choices.cat,
         cmprop: 'title',
         format: 'json'
 	};
