@@ -32,6 +32,7 @@ function cat_links_main() {
 			$('<label>').text('What category would you like add add from?: '),
 			$('<input>').attr({'type':'text','id':'CL-cat-name','name':'CL-cat-name'})
 		);
+		$('#CL-cat-name').focus()
 		$("#CL-interface-content").append(
 			$('<div>').css('margin-bottom','0.5em').append(
 				$('<label>').attr('for','CL-option-newtitle').append(
