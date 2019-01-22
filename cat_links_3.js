@@ -39,7 +39,7 @@ function cat_links_main() {
 					'Namespaces to add from:'
 				),
 				$('<button>').attr('id', 'CL-set-all').text('Select all'),
-				$('<button>').attr('id', 'CL-set-none').text('Unselect all')
+				$('<button>').attr('id', 'CL-set-none').text('Unselect all'),
 				$('<button>').attr('id', 'CL-set-invert').text('Invert selections')	
 			),
 			$('<div>').attr({'class': 'CL-row'}).append(
