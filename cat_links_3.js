@@ -301,7 +301,7 @@ function make_link( page_element, namespaces ){
 	}
 	return this_link;
 }
-funciot set_all ( setting ){
+function set_all ( setting ){
 	$("#CL-option-checkbox-Article").checked = setting;
 	$("#CL-option-checkbox-Talk").checked = setting;
 	$("#CL-option-checkbox-User").checked = setting;
