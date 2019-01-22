@@ -37,8 +37,12 @@ function cat_links_main() {
 			$('<div>').css('margin-bottom','0.5em').append(
 				$('<label>').attr('for','CL-option-newtitle').append(
 					'Namespaces to add from:'
-				)
+				),
+				$('<button>').attr('id', 'CL-set-all').text('Select all'),
+				$('<button>').attr('id', 'CL-set-none').text('Unselect all')	
 			),
+			$("#CL-set-all").click(function(){ set_all( true ); });
+			$("#CL-set-none").click(function(){ set_all( false ); });
 			$('<div>').attr({'class': 'CL-row'}).append(
 				$('<div>').attr({'class': 'CL-column'}).append(
 					$('<div>').css('margin-bottom','0.5em').append(
@@ -296,4 +300,36 @@ function make_link( page_element, namespaces ){
 		this_link = '* [[' + page_name + ']]\n';
 	}
 	return this_link;
+}
+funciot set_all ( setting ){
+	$("#CL-option-checkbox-Article").checked = setting;
+	$("#CL-option-checkbox-Talk").checked = setting;
+	$("#CL-option-checkbox-User").checked = setting;
+	$("#CL-option-checkbox-User_talk").checked = setting;
+	$("#CL-option-checkbox-Wikipedia").checked = setting;
+	$("#CL-option-checkbox-Wikipedia_talk").checked = setting;
+	$("#CL-option-checkbox-File").checked = setting;
+	$("#CL-option-checkbox-File_talk").checked = setting;
+	$("#CL-option-checkbox-MediaWiki").checked = setting;
+	$("#CL-option-checkbox-MediaWiki_talk").checked = setting;
+	$("#CL-option-checkbox-Template").checked = setting;
+	$("#CL-option-checkbox-Template_talk").checked = setting;
+	$("#CL-option-checkbox-Help").checked = setting;
+	$("#CL-option-checkbox-Help_talk").checked = setting;
+	$("#CL-option-checkbox-Category").checked = setting;
+	$("#CL-option-checkbox-Category_talk").checked = setting;
+	$("#CL-option-checkbox-Portal").checked = setting;
+	$("#CL-option-checkbox-Portal_talk").checked = setting;
+	$("#CL-option-checkbox-Book").checked = setting;
+	$("#CL-option-checkbox-Book_talk").checked = setting;
+	$("#CL-option-checkbox-Draft").checked = setting;
+	$("#CL-option-checkbox-Draft_talk").checked = setting;
+	$("#CL-option-checkbox-TimedText").checked = setting;
+	$("#CL-option-checkbox-TimedText_talk").checked = setting;
+	$("#CL-option-checkbox-Module").checked = setting;
+	$("#CL-option-checkbox-Module_talk").checked = setting;
+	$("#CL-option-checkbox-Gadget").checked = setting;
+	$("#CL-option-checkbox-Gadget_talk").checked = setting;
+	$("#CL-option-checkbox-Gadget_Definition").checked = setting;
+	$("#CL-option-checkbox-Gadget_Definition_talk").checked = setting;
 }
