@@ -39,7 +39,8 @@ function cat_links_main() {
 					'Namespaces to add from:'
 				),
 				$('<button>').attr('id', 'CL-set-all').text('Select all'),
-				$('<button>').attr('id', 'CL-set-none').text('Unselect all')	
+				$('<button>').attr('id', 'CL-set-none').text('Unselect all')
+				$('<button>').attr('id', 'CL-set-invert').text('Invert selections')	
 			),
 			$('<div>').attr({'class': 'CL-row'}).append(
 				$('<div>').attr({'class': 'CL-column'}).append(
@@ -181,6 +182,7 @@ function cat_links_main() {
 		});
 		$("#CL-set-all").click(function(){ set_all( true ); });
 		$("#CL-set-none").click(function(){ set_all( false ); });
+		$("#CL-set-invert").click(function(){ invert_all() });
 	};
 }
 function get_chosen(){
@@ -332,4 +334,36 @@ function set_all ( setting ){
 	$("#CL-option-checkbox-Gadget_talk").prop("checked", setting);
 	$("#CL-option-checkbox-Gadget_Definition").prop("checked", setting);
 	$("#CL-option-checkbox-Gadget_Definition_talk").prop("checked", setting);
+}
+function invert_all (){
+	$("#CL-option-checkbox-Article").prop("checked", !$("#CL-option-checkbox-Article").prop("checked"));
+	$("#CL-option-checkbox-Talk").prop("checked", !$("#CL-option-checkbox-Talk").prop("checked"));
+	$("#CL-option-checkbox-User").prop("checked", !$("#CL-option-checkbox-User").prop("checked"));
+	$("#CL-option-checkbox-User_talk").prop("checked", !$("#CL-option-checkbox-User_talk").prop("checked"));
+	$("#CL-option-checkbox-Wikipedia").prop("checked", !$("#CL-option-checkbox-Wikipedia").prop("checked"));
+	$("#CL-option-checkbox-Wikipedia_talk").prop("checked", !$("#CL-option-checkbox-Wikipedia_talk").prop("checked"));
+	$("#CL-option-checkbox-File").prop("checked", !$("#CL-option-checkbox-File").prop("checked"));
+	$("#CL-option-checkbox-File_talk").prop("checked", !$("#CL-option-checkbox-File_talk").prop("checked"));
+	$("#CL-option-checkbox-MediaWiki").prop("checked", !$("#CL-option-checkbox-MediaWiki").prop("checked"));
+	$("#CL-option-checkbox-MediaWiki_talk").prop("checked", !$("#CL-option-checkbox-MediaWiki_talk").prop("checked"));
+	$("#CL-option-checkbox-Template").prop("checked", !$("#CL-option-checkbox-Template").prop("checked"));
+	$("#CL-option-checkbox-Template_talk").prop("checked", !$("#CL-option-checkbox-Template_talk").prop("checked"));
+	$("#CL-option-checkbox-Help").prop("checked", !$("#CL-option-checkbox-Help").prop("checked"));
+	$("#CL-option-checkbox-Help_talk").prop("checked", !$("#CL-option-checkbox-Help_talk").prop("checked"));
+	$("#CL-option-checkbox-Category").prop("checked", !$("#CL-option-checkbox-Category").prop("checked"));
+	$("#CL-option-checkbox-Category_talk").prop("checked", !$("#CL-option-checkbox-Category_talk").prop("checked"));
+	$("#CL-option-checkbox-Portal").prop("checked", !$("#CL-option-checkbox-Portal").prop("checked"));
+	$("#CL-option-checkbox-Portal_talk").prop("checked", !$("#CL-option-checkbox-Portal_talk").prop("checked"));
+	$("#CL-option-checkbox-Book").prop("checked", !$("#CL-option-checkbox-Book").prop("checked"));
+	$("#CL-option-checkbox-Book_talk").prop("checked", !$("#CL-option-checkbox-Book_talk").prop("checked"));
+	$("#CL-option-checkbox-Draft").prop("checked", !$("#CL-option-checkbox-Draft").prop("checked"));
+	$("#CL-option-checkbox-Draft_talk").prop("checked", !$("#CL-option-checkbox-Draft_talk").prop("checked"));
+	$("#CL-option-checkbox-TimedText").prop("checked", !$("#CL-option-checkbox-TimedText").prop("checked"));
+	$("#CL-option-checkbox-TimedText_talk").prop("checked", !$("#CL-option-checkbox-TimedText_talk").prop("checked"));
+	$("#CL-option-checkbox-Module").prop("checked", !$("#CL-option-checkbox-Module").prop("checked"));
+	$("#CL-option-checkbox-Module_talk").prop("checked", !$("#CL-option-checkbox-Module_talk").prop("checked"));
+	$("#CL-option-checkbox-Gadget").prop("checked", !$("#CL-option-checkbox-Gadget").prop("checked"));
+	$("#CL-option-checkbox-Gadget_talk").prop("checked", !$("#CL-option-checkbox-Gadget_talk").prop("checked"));
+	$("#CL-option-checkbox-Gadget_Definition").prop("checked", !$("#CL-option-checkbox-Gadget_Definition").prop("checked"));
+	$("#CL-option-checkbox-Gadget_Definition_talk").prop("checked", !$("#CL-option-checkbox-Gadget_Definition_talk").prop("checked"));
 }
