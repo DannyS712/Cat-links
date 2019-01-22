@@ -41,8 +41,6 @@ function cat_links_main() {
 				$('<button>').attr('id', 'CL-set-all').text('Select all'),
 				$('<button>').attr('id', 'CL-set-none').text('Unselect all')	
 			),
-			$("#CL-set-all").click(function(){ set_all( true ); });
-			$("#CL-set-none").click(function(){ set_all( false ); });
 			$('<div>').attr({'class': 'CL-row'}).append(
 				$('<div>').attr({'class': 'CL-column'}).append(
 					$('<div>').css('margin-bottom','0.5em').append(
@@ -181,6 +179,8 @@ function cat_links_main() {
 			get_chosen();
 			$("#CL-modal").remove();
 		});
+		$("#CL-set-all").click(function(){ set_all( true ); });
+		$("#CL-set-none").click(function(){ set_all( false ); });
 	};
 }
 function get_chosen(){
