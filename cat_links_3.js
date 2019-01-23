@@ -29,21 +29,24 @@ function cat_links_main() {
 		$("#CL-interface-header, #CL-interface-content, #CL-interface-footer").empty();
 		$("#CL-interface-header").text("Category links");
 		$("#CL-interface-content").append(
-			$('<label>').text('What category would you like add add from?'),
-			$('<label>').text('Category:'),
-			$('<input>').attr({'type':'text','id':'CL-cat-name','name':'CL-cat-name'}),
+			$('<div>').append( $('<label>').text('What category would you like add add from?') ),
+			$('<div>')append( 
+				$('<label>').text('Category:'),
+				$('<input>').attr({'type':'text','id':'CL-cat-name','name':'CL-cat-name'})
+			),
 			$('<hr>')
 		);
 		$('#CL-cat-name').focus();
 		$("#CL-interface-content").append(
 			$('<div>').css('margin-bottom','0.5em').append(
-				$('<label>').attr('for','CL-option-newtitle').append(
-					'Namespaces to add from:'
-				),
-				$('<button>').attr('id', 'CL-set-all').text('Select all'),
-				$('<button>').attr('id', 'CL-set-none').text('Unselect all'),
-				$('<button>').attr('id', 'CL-set-invert').text('Invert selections')	
+				$('<div>').append( $('<label>').attr('for','CL-option-newtitle').append('Namespaces to add from:') ),
+				$('<div>').append(
+					$('<button>').attr('id', 'CL-set-all').text('Select all'),
+					$('<button>').attr('id', 'CL-set-none').text('Unselect all'),
+					$('<button>').attr('id', 'CL-set-invert').text('Invert selections')
+				)
 			),
+			$('<hr>'),
 			$('<div>').attr({'class': 'CL-row'}).append(
 				$('<div>').attr({'class': 'CL-column'}).append(
 					$('<div>').css('margin-bottom','0.5em').append(
