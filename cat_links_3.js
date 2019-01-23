@@ -21,16 +21,17 @@ function cat_links_main() {
 	});
 	var screen0 = function() {
 		$("#CL-interface-header, #CL-interface-content, #CL-interface-footer").empty();
-		$("#CL-interface-header").text("Tags Manager...");
+		$("#CL-interface-header").text("Category links generator...");
 		$("#CL-interface-content").text("Loading...");
 		screen1();
 	};
 	var screen1 = function() {
 		$("#CL-interface-header, #CL-interface-content, #CL-interface-footer").empty();
-		$("#CL-interface-header").text("Category links: Namespaces");
+		$("#CL-interface-header").text("Category links");
 		$("#CL-interface-content").append(
-			$('<label>').text('What category would you like add add from?: '),
-			$('<input>').attr({'type':'text','id':'CL-cat-name','name':'CL-cat-name'})
+			$('<label>').text('What category would you like add add from? \t\tCategory:'),
+			$('<input>').attr({'type':'text','id':'CL-cat-name','name':'CL-cat-name'}),
+			$('<hr>')
 		);
 		$('#CL-cat-name').focus();
 		$("#CL-interface-content").append(
@@ -38,6 +39,7 @@ function cat_links_main() {
 				$('<label>').attr('for','CL-option-newtitle').append(
 					'Namespaces to add from:'
 				),
+				$('<hr>'),
 				$('<button>').attr('id', 'CL-set-all').text('Select all'),
 				$('<button>').attr('id', 'CL-set-none').text('Unselect all'),
 				$('<button>').attr('id', 'CL-set-invert').text('Invert selections')	
