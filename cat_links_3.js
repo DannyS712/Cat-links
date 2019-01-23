@@ -30,7 +30,7 @@ function cat_links_main() {
 		$("#CL-interface-header").text("Category links");
 		$("#CL-interface-content").append(
 			$('<div>').append( $('<label>').text('What category would you like add add from?') ),
-			$('<div>')append( 
+			$('<div>').append( 
 				$('<label>').text('Category:'),
 				$('<input>').attr({'type':'text','id':'CL-cat-name','name':'CL-cat-name'})
 			),
