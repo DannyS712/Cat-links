@@ -29,7 +29,8 @@ function cat_links_main() {
 		$("#CL-interface-header, #CL-interface-content, #CL-interface-footer").empty();
 		$("#CL-interface-header").text("Category links");
 		$("#CL-interface-content").append(
-			$('<label>').text('What category would you like add add from?\nCategory:'),
+			$('<label>').text('What category would you like add add from?'),
+			$('<label>').text('Category:'),
 			$('<input>').attr({'type':'text','id':'CL-cat-name','name':'CL-cat-name'}),
 			$('<hr>')
 		);
@@ -39,7 +40,6 @@ function cat_links_main() {
 				$('<label>').attr('for','CL-option-newtitle').append(
 					'Namespaces to add from:'
 				),
-				$('<hr>'),
 				$('<button>').attr('id', 'CL-set-all').text('Select all'),
 				$('<button>').attr('id', 'CL-set-none').text('Unselect all'),
 				$('<button>').attr('id', 'CL-set-invert').text('Invert selections')	
