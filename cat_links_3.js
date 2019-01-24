@@ -210,7 +210,7 @@ function get_chosen(){
 	CL_choices.cat = $('#CL-cat-name').val();
 	CL_choices.nss = get_chosen_nss();
 	CL_choices.cat_link = '[[:Category:' + CL_choices.cat + ']]';
-	CL_choices.edit_summary = 'Adding links from ' + CL_choices.cat_link + 'with ' + CL_config.name + ' (version ' + CL_config.version + ')';
+	CL_choices.edit_summary = 'Adding links from ' + CL_choices.cat_link + ' with ' + CL_config.name + ' (version ' + CL_config.version + ')';
 
 	console.log( CL_choices );
 	console.log ( sanity_check() );
