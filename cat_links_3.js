@@ -11,13 +11,13 @@ var CL_choices = {
 	cat_link: null,
 	edit_summary: null,
 	list_element: '* '
-}
+};
 
 $(function (){
 	if (mw.config.get('wgCurRevisionId') === 0 ) return;
 	mw.loader.load('//en.wikipedia.org/w/index.php?title=User:DannyS712 test/cat links 3.css&action=raw&ctype=text/css', 'text/css'); // Import stylesheet
 	importScript('User:DannyS712 test/append.js');
-	importScript('User:DannyS712 test/CL helper.js')
+	importScript('User:DannyS712 test/CL helper.js');
 	mw.loader.using(['mediawiki.util', 'mediawiki.api', 'mediawiki.Title', 'mediawiki.RegExp'], cat_links_main());
 });
 
@@ -209,7 +209,7 @@ function cat_links_main() {
 function get_chosen(){
 	CL_choices.cat = $('#CL-cat-name').val();
 	CL_choices.nss = get_chosen_nss();
-	CL_choices.cat_link = '[[:Category:' + CL_choices.cat + ']]'
+	CL_choices.cat_link = '[[:Category:' + CL_choices.cat + ']]';
 	CL_choices.edit_summary = 'Adding links from ' + CL_choices.cat_link + 'with ' + CL_config.name + ' (version ' + CL_config.version + ')';
 
 	console.log( CL_choices );
@@ -238,7 +238,7 @@ function add_links () {
 			links = links + this_link;
 		}
 		if ( links === "" ) alert( "There are no pages in the specified namespace(s) in that category." );
-		else addNewSection( CL_choices.edit_summary , 'Pages in ' CL_choices.cat_link , links );
+		else addNewSection( CL_choices.edit_summary , 'Pages in ' + CL_choices.cat_link , links );
 	} );
 }
 function make_link( page_element, namespaces ){
