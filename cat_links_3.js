@@ -1,3 +1,18 @@
+var CL_config = {
+	name: '[[User:DannyS712/Cat links|Cat Links]]',
+	version: 3.0,
+	location: 'p-cactions',
+	testing: true,
+	debug: true
+};
+var CL_choices = {
+	cat: null,
+	nss: null,
+	cat_link: null,
+	edit_summary: null,
+	list_element: '* '
+}
+
 $(function (){
 	if (mw.config.get('wgCurRevisionId') === 0 ) return;
 	mw.loader.load('//en.wikipedia.org/w/index.php?title=User:DannyS712 test/cat links 3.css&action=raw&ctype=text/css', 'text/css'); // Import stylesheet
@@ -7,7 +22,7 @@ $(function (){
 });
 
 function cat_links_main() {
-	mw.util.addPortletLink('p-cactions', '#', 'CL', 'aca-tag', null, null, "#ca-move");
+	mw.util.addPortletLink(CL_config.location, '#', 'CL', 'aca-tag', null, null, "#ca-move");
 	$('#aca-tag').on('click', function() {
 		$('body').prepend('<div id="CL-modal">'+
 			'<div id="CL-interface">'+
@@ -192,27 +207,26 @@ function cat_links_main() {
 	};
 }
 function get_chosen(){
-	var chosen_category = $('#CL-cat-name').val();
-	var chosen_nss = get_chosen_nss();
-	var choices = {
-		cat: chosen_category,
-		nss: chosen_nss
-	};
-	console.log( choices );
-	console.log ( sanity_check( choices ) );
-	add_links( choices );
+	CL_choices.cat = $('#CL-cat-name').val();
+	CL_choices.nss = get_chosen_nss();
+	CL_choices.cat_link = '[[:Category:' + CL_choices.cat + ']]'
+	CL_choices.edit_summary = 'Adding links from ' + CL_choices.cat_link + 'with ' + CL_config.name + ' (version ' + CL_config.version + ')';
+
+	console.log( CL_choices );
+	console.log ( sanity_check() );
+	add_links();
 }
-function sanity_check( choices ){
-	if (choices.cat === null || choices.cat === '') return false;
-	if (choices.nss.length === 0) return false;
+function sanity_check(){
+	if (CL_choices.cat === null || CL_choices.cat === '') return false;
+	if (CL_choices.nss.length === 0) return false;
 	return true;
 }
-function add_links (choices) {
+function add_links () {
 	var catRequest = {
         action: 'query',
         list: 'categorymembers',
         cmlimit: 'max',
-        cmtitle: 'Category:' + choices.cat,
+        cmtitle: 'Category:' + CL_choices.cat,
         cmprop: 'title',
         format: 'json'
 	};
@@ -220,11 +234,11 @@ function add_links (choices) {
 		var pages = catResponse.query.categorymembers;
 		var links = "";
 		for (var i = 0; i < pages.length; i++) {
-			var this_link = make_link( pages[i], choices.nss );
+			var this_link = make_link( pages[i], CL_choices.nss );
 			links = links + this_link;
 		}
 		if ( links === "" ) alert( "There are no pages in the specified namespace(s) in that category." );
-		else addNewSection( 'Adding links with [[User:DannyS712/Cat links|cat links]]', 'Pages in [[:Category:' + choices.cat + ']]', links );
+		else addNewSection( CL_choices.edit_summary , 'Pages in ' CL_choices.cat_link , links );
 	} );
 }
 function make_link( page_element, namespaces ){
@@ -237,4 +251,3 @@ function make_link( page_element, namespaces ){
 	}
 	return this_link;
 }
-
