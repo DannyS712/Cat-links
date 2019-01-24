@@ -1,12 +1,28 @@
+var CL_config = {
+	name: '[[User:DannyS712/Cat links|Cat Links]]',
+	version: 3.0,
+	location: (window.CL_location || 'p-cactions'),
+	testing: true,
+	debug: true
+};
+var CL_choices = {
+	cat: null,
+	nss: null,
+	cat_link: null,
+	edit_summary: null,
+	list_element: '* '
+};
+
 $(function (){
 	if (mw.config.get('wgCurRevisionId') === 0 ) return;
 	mw.loader.load('//en.wikipedia.org/w/index.php?title=User:DannyS712 test/cat links 3.css&action=raw&ctype=text/css', 'text/css'); // Import stylesheet
 	importScript('User:DannyS712 test/append.js');
+	importScript('User:DannyS712 test/CL helper.js');
 	mw.loader.using(['mediawiki.util', 'mediawiki.api', 'mediawiki.Title', 'mediawiki.RegExp'], cat_links_main());
 });
 
 function cat_links_main() {
-	mw.util.addPortletLink('p-cactions', '#', 'CL', 'aca-tag', null, null, "#ca-move");
+	mw.util.addPortletLink(CL_config.location, '#', 'CL', 'aca-tag', null, null, "#ca-move");
 	$('#aca-tag').on('click', function() {
 		$('body').prepend('<div id="CL-modal">'+
 			'<div id="CL-interface">'+
@@ -21,24 +37,32 @@ function cat_links_main() {
 	});
 	var screen0 = function() {
 		$("#CL-interface-header, #CL-interface-content, #CL-interface-footer").empty();
-		$("#CL-interface-header").text("Tags Manager...");
+		$("#CL-interface-header").text("Category links generator...");
 		$("#CL-interface-content").text("Loading...");
 		screen1();
 	};
 	var screen1 = function() {
 		$("#CL-interface-header, #CL-interface-content, #CL-interface-footer").empty();
-		$("#CL-interface-header").text("Category links: Namespaces");
+		$("#CL-interface-header").text("Category links");
 		$("#CL-interface-content").append(
-			$('<label>').text('What category would you like add add from?: '),
-			$('<input>').attr({'type':'text','id':'CL-cat-name','name':'CL-cat-name'})
+			$('<div>').append( $('<label>').text('What category would you like add add from?') ),
+			$('<div>').append( 
+				$('<label>').text('Category:'),
+				$('<input>').attr({'type':'text','id':'CL-cat-name','name':'CL-cat-name'})
+			),
+			$('<hr>')
 		);
 		$('#CL-cat-name').focus();
 		$("#CL-interface-content").append(
 			$('<div>').css('margin-bottom','0.5em').append(
-				$('<label>').attr('for','CL-option-newtitle').append(
-					'Namespaces to add from:'
+				$('<div>').append( $('<label>').attr('for','CL-option-newtitle').append('Namespaces to add from:') ),
+				$('<div>').append(
+					$('<button>').attr('id', 'CL-set-all').text('Select all'),
+					$('<button>').attr('id', 'CL-set-none').text('Unselect all'),
+					$('<button>').attr('id', 'CL-set-invert').text('Invert selections')
 				)
 			),
+			$('<hr>'),
 			$('<div>').attr({'class': 'CL-row'}).append(
 				$('<div>').attr({'class': 'CL-column'}).append(
 					$('<div>').css('margin-bottom','0.5em').append(
@@ -177,102 +201,32 @@ function cat_links_main() {
 			get_chosen();
 			$("#CL-modal").remove();
 		});
+		$("#CL-set-all").click(function(){ set_all( true ); });
+		$("#CL-set-none").click(function(){ set_all( false ); });
+		$("#CL-set-invert").click(function(){ invert_all() });
 	};
 }
 function get_chosen(){
-	var chosen_category = $('#CL-cat-name').val();
-	var chosen_nss = get_chosen_nss();
-	var choices = {
-		cat: chosen_category,
-		nss: chosen_nss
-	};
-	console.log( choices );
-	console.log ( sanity_check( choices ) );
-	add_links( choices );
-}
-function get_chosen_nss(){
-	var ns_dict = {
-		"Article": 0,
-		"Talk": 1,
-		"User": 2,
-		"User talk": 3,
-		"Wikipedia": 4,
-		"Wikipedia talk": 5,
-		"File": 6,
-		"File talk": 7,
-		"MediaWiki": 8,
-		"MediaWiki talk": 9,
-		"Template": 10,
-		"Template talk": 11,
-		"Help": 12,
-		"Help talk": 13,
-		"Category": 14,
-		"Category talk": 15,
-		"Portal": 100,
-		"Portal talk": 101,
-		"Book": 108,
-		"Book talk": 109,
-		"Draft": 118,
-		"Draft talk": 119,
-		"TimedText": 710,
-		"TimedText talk": 711,
-		"Module": 828,
-		"Module talk": 829,
-		"Gadget": 2300,
-		"Gadget talk": 2301,
-		"Gadget Definition": 2302,
-		"Gadget Definition talk": 2303
-	};
-	var chosen_ns_s_array = [];
+	CL_choices.cat = $('#CL-cat-name').val();
+	CL_choices.nss = get_chosen_nss();
+	CL_choices.cat_link = '[[:Category:' + CL_choices.cat + ']]';
+	CL_choices.edit_summary = 'Adding links from ' + CL_choices.cat_link + ' with ' + CL_config.name + ' (version ' + CL_config.version + ')';
 
-	if ($("#CL-option-checkbox-Article").prop("checked")) chosen_ns_s_array.push(ns_dict["Article"]);
-	if ($("#CL-option-checkbox-Talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Talk"]);
-	if ($("#CL-option-checkbox-User").prop("checked")) chosen_ns_s_array.push(ns_dict["User"]);
-	if ($("#CL-option-checkbox-User_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["User talk"]);
-	if ($("#CL-option-checkbox-Wikipedia").prop("checked")) chosen_ns_s_array.push(ns_dict["Wikipedia"]);
-	if ($("#CL-option-checkbox-Wikipedia_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Wikipedia talk"]);
-	if ($("#CL-option-checkbox-File").prop("checked")) chosen_ns_s_array.push(ns_dict["File"]);
-	if ($("#CL-option-checkbox-File_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["File talk"]);
-	if ($("#CL-option-checkbox-MediaWiki").prop("checked")) chosen_ns_s_array.push(ns_dict["MediaWiki"]);
-	if ($("#CL-option-checkbox-MediaWiki_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["MediaWiki talk"]);
-	if ($("#CL-option-checkbox-Template").prop("checked")) chosen_ns_s_array.push(ns_dict["Template"]);
-	if ($("#CL-option-checkbox-Template_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Template talk"]);
-	if ($("#CL-option-checkbox-Help").prop("checked")) chosen_ns_s_array.push(ns_dict["Help"]);
-	if ($("#CL-option-checkbox-Help_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Help talk"]);
-	if ($("#CL-option-checkbox-Category").prop("checked")) chosen_ns_s_array.push(ns_dict["Category"]);
-	if ($("#CL-option-checkbox-Category_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Category talk"]);
-	if ($("#CL-option-checkbox-Portal").prop("checked")) chosen_ns_s_array.push(ns_dict["Portal"]);
-	if ($("#CL-option-checkbox-Portal_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Portal talk"]);
-	if ($("#CL-option-checkbox-Book").prop("checked")) chosen_ns_s_array.push(ns_dict["Book"]);
-	if ($("#CL-option-checkbox-Book_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Book talk"]);
-	if ($("#CL-option-checkbox-Draft").prop("checked")) chosen_ns_s_array.push(ns_dict["Draft"]);
-	if ($("#CL-option-checkbox-Draft_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Draft talk"]);
-	if ($("#CL-option-checkbox-TimedText").prop("checked")) chosen_ns_s_array.push(ns_dict["TimedText"]);
-	if ($("#CL-option-checkbox-TimedText_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["TimedText talk"]);
-	if ($("#CL-option-checkbox-Module").prop("checked")) chosen_ns_s_array.push(ns_dict["Module"]);
-	if ($("#CL-option-checkbox-Module_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Module talk"]);
-	if ($("#CL-option-checkbox-Gadget").prop("checked")) chosen_ns_s_array.push(ns_dict["Gadget"]);
-	if ($("#CL-option-checkbox-Gadget_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Gadget talk"]);
-	if ($("#CL-option-checkbox-Gadget_Definition").prop("checked")) chosen_ns_s_array.push(ns_dict["Gadget Definition"]);
-	if ($("#CL-option-checkbox-Gadget_Definition_talk").prop("checked")) chosen_ns_s_array.push(ns_dict["Gadget Definition talk"]);
-
-	return chosen_ns_s_array;
+	console.log( CL_choices );
+	console.log ( sanity_check() );
+	add_links();
 }
-function sanity_check( choices ){
-	if (choices.cat === null || choices.cat === ''){
-		return false;
-	}
-	if (choices.nss.length === 0){
-		return false;
-	}
+function sanity_check(){
+	if (CL_choices.cat === null || CL_choices.cat === '') return false;
+	if (CL_choices.nss.length === 0) return false;
 	return true;
 }
-function add_links (choices) {
+function add_links () {
 	var catRequest = {
         action: 'query',
         list: 'categorymembers',
         cmlimit: 'max',
-        cmtitle: 'Category:' + choices.cat,
+        cmtitle: 'Category:' + CL_choices.cat,
         cmprop: 'title',
         format: 'json'
 	};
@@ -280,11 +234,11 @@ function add_links (choices) {
 		var pages = catResponse.query.categorymembers;
 		var links = "";
 		for (var i = 0; i < pages.length; i++) {
-			var this_link = make_link( pages[i], choices.nss );
+			var this_link = make_link( pages[i], CL_choices.nss );
 			links = links + this_link;
 		}
 		if ( links === "" ) alert( "There are no pages in the specified namespace(s) in that category." );
-		else addNewSection( 'Adding links with [[User:DannyS712/Cat links|cat links]]', 'Pages in [[:Category:' + choices.cat + ']]', links );
+		else addNewSection( CL_choices.edit_summary , 'Pages in ' + CL_choices.cat_link , links );
 	} );
 }
 function make_link( page_element, namespaces ){
