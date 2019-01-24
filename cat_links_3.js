@@ -1,7 +1,7 @@
 var CL_config = {
 	name: '[[User:DannyS712/Cat links|Cat Links]]',
 	version: 3.0,
-	location: 'p-cactions',
+	location: (window.CL_location || 'p-cactions'),
 	testing: true,
 	debug: true
 };
