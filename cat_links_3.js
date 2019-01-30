@@ -194,6 +194,14 @@ function cat_links_main() {
 			$('<button>').attr('id', 'CL-next').text('Add links!'),
 			$('<button>').attr('id', 'CL-cancel').css('margin-left','3em').text('Cancel')
 		);
+		document.getElementById("CL-modal").addEventListener( "keydown", function ( key ) {
+        	if( key.ctrlKey && ( key.keyCode == 10 || key.keyCode == 13 ) ) {
+            	document.getElementById("CL-next").click();
+            }
+            else if ( key.keyCode == 27 ){
+            	document.getElementById("CL-cancel").click();
+            }
+        } );
 		$("#CL-cancel").click(function(){
 			$("#CL-modal").remove();
 		});
